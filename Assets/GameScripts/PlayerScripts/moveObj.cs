@@ -78,8 +78,6 @@ public class moveObj : MonoBehaviour {
                 velocity = 0;
             }
         }
-
-        this.transform.Translate(Vector3.forward * velocity * Time.deltaTime);
     }
 	
 	// Update is called once per frame
@@ -88,5 +86,10 @@ public class moveObj : MonoBehaviour {
         turn();
         movement();
         print(velocity);
+    }
+
+    void fixedUpdate()
+    {
+        this.transform.Translate(Vector3.forward * velocity * Time.deltaTime);
     }
 }
