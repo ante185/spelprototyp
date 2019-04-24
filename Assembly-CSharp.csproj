@@ -68,10 +68,14 @@
     <Compile Include="Assets\Allt\Scripts\EmilScripts\AlternativeCameraFollow.cs" />
     <Compile Include="Assets\Allt\Scripts\EmilScripts\CheckpointEmil.cs" />
     <Compile Include="Assets\Allt\Scripts\EmilScripts\Display.cs" />
+    <Compile Include="Assets\Allt\Scripts\EmilScripts\displayText.cs" />
     <Compile Include="Assets\Allt\Scripts\EmilScripts\GameMasterEmil.cs" />
     <Compile Include="Assets\Allt\Scripts\EmilScripts\ItemRotation.cs" />
     <Compile Include="Assets\Allt\Scripts\EmilScripts\load.cs" />
     <Compile Include="Assets\Allt\Scripts\EmilScripts\MiniMap.cs" />
+    <Compile Include="Assets\Allt\Scripts\EmilScripts\PickUpsScripts\SpeedBoost.cs" />
+    <Compile Include="Assets\Allt\Scripts\EmilScripts\PickUpsScripts\SpeedReduction.cs" />
+    <Compile Include="Assets\Allt\Scripts\EmilScripts\PickUpsScripts\TimeAdd.cs" />
     <Compile Include="Assets\Allt\Scripts\EmilScripts\VehicleMovement2.cs" />
     <Compile Include="Assets\Allt\Scripts\moveObj.cs" />
     <Reference Include="UnityEditor.StandardEvents">

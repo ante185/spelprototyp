@@ -14,29 +14,22 @@ public class VehicleMovement2 : MonoBehaviour {
 
     
 
-    public Display pickUps;
-    private GameMaster gm;
-    private float delay = 5.0f;
-    private const int nrOf = 50;
-    private float[] itemTime = new float[nrOf];
-    private GameObject[] item = new GameObject[nrOf];
-    private bool[] timeIncrease = new bool[nrOf];
-    private int counter = 0;
+    
+    private GameMasterEmil gm;
+    
+    
+    
+    
+    
     private int health = 1000;
-    private bool[] speedIncr = new bool[nrOf];
-    private bool[] speedredu = new bool[nrOf];
-    private int reduceCounter = 0;
-    private int boostCounter = 0;
-    private float[] boostTimer = new float[nrOf];
-    private float[] reduceTimer = new float[nrOf];
-    private GameObject[] boostItem = new GameObject[nrOf];
-    private GameObject[] reduceItem = new GameObject[nrOf];
+    
+    
     
 
     // Use this for initialization
     void Start ()
     {
-        gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
+        gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMasterEmil>();
         transform.position = gm.lastCheckpointPos;
 
         
@@ -132,176 +125,25 @@ public class VehicleMovement2 : MonoBehaviour {
 
 
 
-        for (int i = 0; i< boostCounter; i++)
-        {
-            if (speedIncr[i])
-            {
-                boostTimer[i] += Time.deltaTime;
-                if (boostTimer[i] > delay)
-                {
-
-
-                    boostItem[i].SetActive(true);
-
-
-
-
-
-                    velocity -= 2;
-                    boostTimer[i] = 0.0f;
-                    speedIncr[i] = false;
-                }
-
-            }
-
-
-
-
-        }
-
-        for(int k=0; k<reduceCounter; k++)
-        {
-
-            if (speedredu[k])
-            {
-                reduceTimer[k] += Time.deltaTime;
-
-                if (reduceTimer[k] > delay)
-                {
-
-
-                    reduceItem[k].SetActive(true);
-
-
-
-
-
-                    maxSpeed += 2.5f;
-                    reduceTimer[k] = 0.0f;
-                    speedredu[k] = false;
-
-                }
-
-
-
-            }
-
-
-
-
-        }
-
-
-        for (int j = 0; j < counter; j++)
-        {
-
-            if (timeIncrease[j])
-            {
-                itemTime[j] += Time.deltaTime;
-
-                if (itemTime[j] > delay)
-                {
-
-
-                    item[j].SetActive(true);
-
-
-
-                    itemTime[j] = 0.0f;
-                    timeIncrease[j] = false;
-                    
-                }
-
-            }
-
-
-           
-          
-
-
-
-
-        }
-    }
-
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("timeReduction"))
-        {
-
-
-            if (item[counter] != other.gameObject)
-            {
-                item[counter] = other.gameObject;
-                timeIncrease[counter] = true;
-                counter += 1;
-
-
-
-
-            }
-
-
-
-
-            other.gameObject.SetActive(false);
-            pickUps.addTime();
-        }
-
-        if(other.gameObject.CompareTag("SpeedBoost"))
-        {
-
-            if (boostItem[boostCounter] != other.gameObject)
-            {
-                boostItem[boostCounter] = other.gameObject;
-                speedIncr[counter] = true;
-                boostCounter += 1;
-
-
-
-
-            }
-
-            
-
-            other.gameObject.SetActive(false);
-            increaseSpeed();
-        }
-
-        if (other.gameObject.CompareTag("SpeedReduction"))
-        {
-
-            if (reduceItem[reduceCounter] != other.gameObject)
-            {
-                reduceItem[reduceCounter] = other.gameObject;
-                speedredu[counter] = true;
-                reduceCounter += 1;
-
-
-
-
-            }
-
-
-
-            other.gameObject.SetActive(false);
-            reduceSpeed();
-        }
-
-
-
-
-    }
-
-
-
-    private void reduceSpeed()
-    {
         
-        maxSpeed -= 2.5f;
+
+       
+
+
+       
     }
 
-    private void increaseSpeed()
+
+
+
+    public void decreaseSpeed()
+    {
+        velocity -= 2;
+
+    }
+
+
+    public void increaseSpeed()
     {
         velocity += 2;
 

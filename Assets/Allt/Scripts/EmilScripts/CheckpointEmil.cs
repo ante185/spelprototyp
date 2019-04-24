@@ -13,21 +13,21 @@ using UnityEngine;
 
 public class CheckpointEmil : MonoBehaviour {
 
-    private GameMaster gm;
+    private GameMasterEmil gm;
     public int counter;
     public bool passedPreviousPoint = false;
     public CheckpointEmil otherCP;
 
     void Start()
     {
-        gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
+        gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMasterEmil>();
     }
 
     //Funktionen kallas efter att spelaren har koliderat med ett annat objekt
     void OnTriggerEnter(Collider other)
     {
         //Om det andra objektet har taggen Player
-        if(other.CompareTag("Player"))
+        if(other.gameObject.CompareTag("Player"))
         {
             //Hämtar information angående position och rotation från den senaste checkpointen
             gm.lastCheckpointPos = transform.position;
@@ -35,7 +35,7 @@ public class CheckpointEmil : MonoBehaviour {
 
             if (otherCP.passedPreviousPoint)
             {
-                otherCP.counter = otherCP.counter + 1;
+                counter+= 1;
                 otherCP.passedPreviousPoint = false;
                 passedPreviousPoint = true;
                 

@@ -12,7 +12,7 @@ public class AlternativeCameraFollow : MonoBehaviour {
     public float rayDistance = 1.0f;
     private Vector3 velocity = Vector3.zero;
     private Quaternion rotation;
-
+    private bool test = false;
 
 
 
@@ -22,14 +22,15 @@ public class AlternativeCameraFollow : MonoBehaviour {
     {
         Vector3 right = transform.TransformDirection(Vector3.right);
         Vector3 left = transform.TransformDirection(Vector3.left);
+        Vector3 back = transform.TransformDirection(Vector3.back);
+        Vector3 forward = transform.TransformDirection(Vector3.forward);
         RaycastHit hit;
 
-        if (rotation.y >= -45 && rotation.y <= 45)
-        {
+        
             if (Physics.Raycast(transform.position, right, out hit, rayDistance))
             {
-                wantedPos = new Vector3(hit.point.x + 1, wantedPos.y, wantedPos.z);
-
+                //wantedPos = new Vector3(hit.point.x + 1, wantedPos.y, wantedPos.z);
+                test = true;
             }
 
 
@@ -37,14 +38,23 @@ public class AlternativeCameraFollow : MonoBehaviour {
 
             if (Physics.Raycast(transform.position, left, out hit, rayDistance))
             {
-                wantedPos = new Vector3(hit.point.x - 1, wantedPos.y, wantedPos.z);
-
+                //wantedPos = new Vector3(hit.point.x - 1, wantedPos.y, wantedPos.z);
+                test = true;
+            }
+            if (Physics.Raycast(transform.position, back, out hit, rayDistance))
+            {
+                //wantedPos = new Vector3(hit.point.x - 1, wantedPos.y, wantedPos.z);
+                test = true;
             }
 
-
-
-
+        if (Physics.Raycast(transform.position, forward, out hit, rayDistance, 9))
+        {
+            //wantedPos = new Vector3(hit.point.x - 1, wantedPos.y, wantedPos.z);
+            test = true;
         }
+
+
+
 
 
 
@@ -74,9 +84,21 @@ public class AlternativeCameraFollow : MonoBehaviour {
 
         courseCorrection(ref desiredPos);
 
-        transform.position = Vector3.SmoothDamp(transform.position, desiredPos, ref velocity, smoothing);
+        if(test==false)
+        {
+            transform.position = Vector3.SmoothDamp(transform.position, desiredPos, ref velocity, smoothing);
 
-        transform.LookAt(target);
+            transform.LookAt(target);
+
+
+        }
+        else if(test)
+        {
+            transform.position = Vector3.SmoothDamp(transform.position, target.position, ref velocity, smoothing);
+            transform.LookAt(target);
+            test = false;
+        }
+       
 
 
     }

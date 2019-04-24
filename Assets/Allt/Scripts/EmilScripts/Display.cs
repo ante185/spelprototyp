@@ -12,7 +12,7 @@ public class Display : MonoBehaviour {
     public Text speed;
     public VehicleMovement2 vehicleStats;
     public bool timeStop = false;
-
+    private int vel;
 
 
  
@@ -29,7 +29,9 @@ public class Display : MonoBehaviour {
         timePassedAsInt = (int)time;
         timePassed.text = "Time: " + timePassedAsInt.ToString();
 
-        speed.text = "Velocity: " + vehicleStats.getcurrentSpeed().ToString();
+        vel = (int)vehicleStats.getcurrentSpeed();
+
+        speed.text = "Velocity: " + vel.ToString();
 
 
     }

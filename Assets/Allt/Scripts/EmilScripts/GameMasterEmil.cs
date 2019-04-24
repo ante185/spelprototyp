@@ -15,7 +15,7 @@ using UnityEngine;
 
 public class GameMasterEmil : MonoBehaviour
 {
-    private string completeList;
+    public string completeList;
     private hss[] listScores = new hss[10];
     private int nrOf = 0;
     public Display clock;
@@ -24,20 +24,9 @@ public class GameMasterEmil : MonoBehaviour
     public Quaternion lastCheckpointRot;
     private bool saveVar = false;
 
-    public static GameMasterEmil controlOfData;
+   
 
-    private void Awake()
-    {
-        DontDestroyOnLoad(gameObject);
-
-        if (controlOfData=null)
-        {
-            
-            controlOfData = this;
-
-        }
-       
-    }
+  
 
     private void Update()
     {
