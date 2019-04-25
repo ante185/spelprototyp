@@ -1,5 +1,0 @@
-Example kan läggas in i Vehicle Scriptet.
-
-Display behöver inte finnas tillhörande ett object, det kan vara empty.
-
-För att kollision ska funka behöver ontrigger vara i kryssad och taggen vara identisk. En rigidbody är också bra för performance.
