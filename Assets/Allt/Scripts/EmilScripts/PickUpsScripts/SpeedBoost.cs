@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpeedBoost : MonoBehaviour
 {
-    VehicleMovement2 player;
+    public VehicleMovement2 player;
     private float delay = 5.0f;
     private const int nrOf = 50;
     private bool speedIncr = false;

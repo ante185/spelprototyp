@@ -15,22 +15,21 @@ using UnityEngine;
 
 public class GameMasterEmil : MonoBehaviour
 {
-   
-   
-   
+
+    
     public Vector3 lastCheckpointPos;
     public Quaternion lastCheckpointRot;
-   
-
-   
-
   
-
-   
-
+    
 
 
-   
+
+
+
+
+
+
+
 
 }
 

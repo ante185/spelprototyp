@@ -23,6 +23,7 @@ public class Display : MonoBehaviour {
         if (gamending.gameEnd)
         {
             time += 0;
+            timePassedAsInt = (int)time;
             timeStop = true;
         }
         time += Time.deltaTime;

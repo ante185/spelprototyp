@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpeedReduction : MonoBehaviour
 {
-    VehicleMovement2 player;
+    public VehicleMovement2 player;
     private float delay = 5.0f;
    
     private bool speedredu = false;

@@ -109,7 +109,7 @@ public class VehicleMovement2 : MonoBehaviour {
     {
         turn();
         movement();
-        print(velocity);
+        //print(velocity);
     }
 
 
