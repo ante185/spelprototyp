@@ -2918,7 +2918,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 571375493}
   y: 2
-  z: 1
+  z: 2
   smoothing: 0.5
   rayDistance: 1
 --- !u!20 &615900631

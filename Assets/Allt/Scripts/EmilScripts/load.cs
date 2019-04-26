@@ -24,7 +24,7 @@ public class load : MonoBehaviour
 
 
 
-        if(startAndFinish.counter>=1)
+        if(startAndFinish.counter>=2)
         {
            gameEnd = true;
 
@@ -57,17 +57,8 @@ public class load : MonoBehaviour
     }
 
 
-    public void buttonplip()
-    {
-
-        SceneManager.LoadScene(1);
-
-
-    }
-    public void loadMenuFromGO()
-    {
-        SceneManager.LoadScene(0);
-    }
+  
+    
 
     public void endGame()
     {

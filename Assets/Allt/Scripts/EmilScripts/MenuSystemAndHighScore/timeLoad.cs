@@ -11,6 +11,7 @@ public class timeLoad : MonoBehaviour
     private ClassA lastTime;
     public Text text;
     private FileStream fS;
+    public int timeToGive;
     private void Start()
     {
         if (File.Exists(Application.persistentDataPath + "HighScoreTwo.dat"))
@@ -21,6 +22,8 @@ public class timeLoad : MonoBehaviour
 
 
             text.text = "Your time: " + lastTime.finalTime.ToString();
+
+            timeToGive = lastTime.finalTime;
 
 
             fS.Close();
