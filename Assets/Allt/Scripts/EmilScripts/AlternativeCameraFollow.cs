@@ -47,12 +47,12 @@ public class AlternativeCameraFollow : MonoBehaviour {
                 test = true;
             }
 
-        if (Physics.Raycast(transform.position, forward, out hit, rayDistance, 9))
+       /* if (Physics.Raycast(transform.position, forward, out hit, rayDistance, 9))
         {
             //wantedPos = new Vector3(hit.point.x - 1, wantedPos.y, wantedPos.z);
             test = true;
         }
-
+        */
 
 
 
