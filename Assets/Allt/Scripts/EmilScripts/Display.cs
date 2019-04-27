@@ -13,7 +13,8 @@ public class Display : MonoBehaviour {
     public VehicleMovement2 vehicleStats;
     public bool timeStop = false;
     private int vel;
-
+    public int laps;
+    
 
  
 
@@ -26,9 +27,12 @@ public class Display : MonoBehaviour {
             timePassedAsInt = (int)time;
             timeStop = true;
         }
+        laps = gamending.getLaps();
+
+
         time += Time.deltaTime;
         timePassedAsInt = (int)time;
-        timePassed.text = "Time: " + timePassedAsInt.ToString();
+        timePassed.text = "Time: " + timePassedAsInt.ToString() + "\n\n" + "NrOfLaps: " + laps.ToString();
 
         vel = (int)vehicleStats.getcurrentSpeed();
 

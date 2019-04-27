@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Allt/Levels/GameOverScreen.unity
+- path: Assets/Allt/Levels/PlayLevel.unity
   isLoaded: 1
   isActive: 1

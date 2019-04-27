@@ -7,5 +7,6 @@ using UnityEngine;
 public class ClassA 
 {
     public int finalTime;
+    public int nrOfLaps;
 	
 }

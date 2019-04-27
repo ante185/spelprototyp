@@ -6,17 +6,25 @@ public class SpeedReduction : MonoBehaviour
 {
     public VehicleMovement2 player;
     private float delay = 5.0f;
-   
-    private bool speedredu = false;
-    
+    //public PickUpManager pum;
+    public bool speedredu = false;
+    private Renderer mesh;
     private float reduceTimer;
-    
+    private Collider meshC;
+    private void Start()
+    {
+        mesh = GetComponent<MeshRenderer>();
+        meshC = GetComponent<CapsuleCollider>();
+
+
+
+    }
 
     private void Update()
     {
 
         
-
+        
             if (speedredu)
             {
                 reduceTimer += Time.deltaTime;
@@ -25,14 +33,17 @@ public class SpeedReduction : MonoBehaviour
                 {
 
 
-                    gameObject.SetActive(true);
+                
 
 
 
 
 
                     player.maxSpeed+= 2.5f;
+                    player.increaseSpeed();
                     reduceTimer = 0.0f;
+                    mesh.enabled = true;
+                    meshC.enabled = true;
                     speedredu = false;
 
                 }
@@ -41,7 +52,7 @@ public class SpeedReduction : MonoBehaviour
 
             }
 
-
+   
 
 
         
@@ -56,21 +67,29 @@ public class SpeedReduction : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            if (speedredu == false)
+            {
+                player.maxSpeed -= 2.5f;
+                player.decreaseSpeed();
+            }
+
+            // pum.setTrue(gameObject);
+
+
+            mesh.enabled = false;
+            meshC.enabled = false;
+            speedredu = true;
+                
+
+
+
 
            
-                
-                speedredu = true;
-                
-
 
 
 
            
-
-
-
-            gameObject.SetActive(false);
-            player.maxSpeed -= 2.5f;
+            
         }
 
 

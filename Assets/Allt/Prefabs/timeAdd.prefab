@@ -22,7 +22,8 @@ GameObject:
   - component: {fileID: 33551550891555784}
   - component: {fileID: 23445647860021076}
   - component: {fileID: 114107003301839280}
-  - component: {fileID: 114035093326662822}
+  - component: {fileID: 65590287111245664}
+  - component: {fileID: 114375441062727604}
   m_Layer: 0
   m_Name: timeAdd
   m_TagString: Untagged
@@ -85,18 +86,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1058992802132278}
   m_Mesh: {fileID: 4300000, guid: 7cf62202f4961e04db97cfc75c52e925, type: 3}
---- !u!114 &114035093326662822
-MonoBehaviour:
+--- !u!65 &65590287111245664
+BoxCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1058992802132278}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c988bd9f58ef71449bf2cc5e841abb2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pickUps: {fileID: 0}
+  serializedVersion: 2
+  m_Size: {x: 0.019021131, y: 0.032978497, z: 0.03297301}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114107003301839280
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -108,3 +109,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef9739f31ca91614089b01cfe6150fe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114375441062727604
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1058992802132278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c988bd9f58ef71449bf2cc5e841abb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickUps: {fileID: 0}

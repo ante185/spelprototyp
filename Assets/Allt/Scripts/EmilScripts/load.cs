@@ -30,6 +30,7 @@ public class load : MonoBehaviour
 
             finalTimee = finalTimer.timePassedAsInt;
             classToHoldTime.finalTime = finalTimee;
+            classToHoldTime.nrOfLaps = getLaps();
 
             if (File.Exists(Application.persistentDataPath + "HighScoreTwo.dat"))
             {
@@ -76,7 +77,12 @@ public class load : MonoBehaviour
 
     }
         
+    public int getLaps()
+    {
 
+
+        return startAndFinish.counter;
+    }
 
 
 }

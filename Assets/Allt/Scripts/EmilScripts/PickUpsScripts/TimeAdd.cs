@@ -7,10 +7,23 @@ public class TimeAdd : MonoBehaviour
 
     public Display pickUps;
     private float delay = 5.0f;
+    private Renderer mesh;
     
-   
-    private bool timeIncrease = false;
+    private Collider meshC;
+
+    public bool timeIncrease = false;
     private float itemTime;
+
+
+    private void Start()
+    {
+        mesh = GetComponent<MeshRenderer>();
+        meshC = GetComponent<BoxCollider>();
+
+
+
+    }
+
 
 
     private void Update()
@@ -25,12 +38,14 @@ public class TimeAdd : MonoBehaviour
                 {
 
 
-                    gameObject.SetActive(true);
+                    
 
 
 
                     itemTime = 0.0f;
-                    timeIncrease = false;
+                mesh.enabled = true;
+                meshC.enabled = true;
+                timeIncrease = false;
 
                 }
 
@@ -48,7 +63,7 @@ public class TimeAdd : MonoBehaviour
 
 
     }
-
+ 
 
     void OnCollisionEnter(Collision other)
     {
@@ -60,20 +75,20 @@ public class TimeAdd : MonoBehaviour
 
            
                
-                timeIncrease = true;
-                
+               
 
 
 
-
-           
-
-
-
-
-            gameObject.SetActive(false);
 
             pickUps.addTime();
+
+
+
+
+            mesh.enabled = false;
+            meshC.enabled = false;
+            timeIncrease = true;
+
 
         }
 

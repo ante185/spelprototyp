@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine;
 using System.IO;
@@ -14,6 +15,7 @@ public class List : MonoBehaviour
     //private int counter = 0;
     public Text text;
     private string complete;
+    
 
 void Start()
     {
@@ -50,14 +52,14 @@ void Start()
 
             complete = blabla.name[0] + "  " + blabla.time[0].ToString() + "\n\n";
 
-            for(int i=1; i<blabla.counter; i++)
+         /*   for(int i=1; i<blabla.counter; i++)
             {
                 complete = complete + blabla.name[i] + "  " + blabla.time[i].ToString() + "\n\n";
             }
 
+    */
 
-
-            text.text = complete;
+            text.text = "Latest Score: " + complete;
 
             fS.Close();
 
@@ -65,5 +67,15 @@ void Start()
         }
     }
      
+
+   public void beginPlay()
+    {
+        SceneManager.LoadScene(1);
+
+
+
+
+    }
+
 
 }

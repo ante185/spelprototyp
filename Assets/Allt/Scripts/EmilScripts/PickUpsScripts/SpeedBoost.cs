@@ -7,32 +7,45 @@ public class SpeedBoost : MonoBehaviour
     public VehicleMovement2 player;
     private float delay = 5.0f;
     private const int nrOf = 50;
-    private bool speedIncr = false;
+    public bool speedIncr = false;
     
-    private float boostTimer; 
-   
+    private float boostTimer;
+    private Renderer mesh;
+
+    private Collider meshC;
+
+    private void Start()
+    {
+        mesh = GetComponent<MeshRenderer>();
+        meshC = GetComponent<CapsuleCollider>();
 
 
+
+    }
 
     private void Update()
     {
         
             if (speedIncr)
             {
+            
                 boostTimer += Time.deltaTime;
                 if (boostTimer > delay)
                 {
 
 
-                    gameObject.SetActive(true);
+                   
 
 
 
 
 
                     player.decreaseSpeed();
+                    player.maxSpeed -= 10;
                     boostTimer = 0.0f;
-                    speedIncr = false;
+                mesh.enabled = true;
+                meshC.enabled = true;
+                speedIncr = false;
                 }
 
             }
@@ -46,6 +59,7 @@ public class SpeedBoost : MonoBehaviour
 
 
     }
+  
 
     void OnCollisionEnter(Collision other)
     {
@@ -55,18 +69,27 @@ public class SpeedBoost : MonoBehaviour
 
             
                 
-                speedIncr = true;
                
 
 
 
 
+
+
+
+
             
-
-
-
-            gameObject.SetActive(false);
+            
             player.increaseSpeed();
+            player.maxSpeed += 10;
+
+
+            mesh.enabled = false;
+            meshC.enabled = false;
+
+
+
+            speedIncr = true;
         }
 
 

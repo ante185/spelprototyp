@@ -11,7 +11,7 @@ public class VehicleMovement2 : MonoBehaviour {
     public float breakForce = 1.0f;
     public float turnrate = 50f;
     private float velocity = 0; //keeps track of current speed
-
+    
     
 
     
@@ -21,7 +21,7 @@ public class VehicleMovement2 : MonoBehaviour {
     
     
     
-    private int health = 1000;
+   
     
     
     
@@ -139,13 +139,19 @@ public class VehicleMovement2 : MonoBehaviour {
     public void decreaseSpeed()
     {
         velocity -= 2;
+        
+        
 
     }
 
 
     public void increaseSpeed()
     {
-        velocity += 2;
+        
+            velocity += 2;
+           
+       
+       
 
     }
 
@@ -154,7 +160,7 @@ public class VehicleMovement2 : MonoBehaviour {
         return velocity;
     }
         
-        
+  
 
 
 }
