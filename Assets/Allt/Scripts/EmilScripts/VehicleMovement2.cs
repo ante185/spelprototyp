@@ -10,39 +10,18 @@ public class VehicleMovement2 : MonoBehaviour {
     public float deacceleration = 0.05f;
     public float breakForce = 1.0f;
     public float turnrate = 50f;
-    private float velocity = 0; //keeps track of current speed
-    
-    
 
-    
+    private float velocity = 0; //keeps track of current speed
+    private float fixedMaxSpeed; //this value is used to reset the maxspeed variable, shall not be changed.
+
     private GameMasterEmil gm;
     
-    
-    
-    
-    
-   
-    
-    
-    
-
     // Use this for initialization
     void Start ()
     {
         gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMasterEmil>();
         transform.position = gm.lastCheckpointPos;
-
-        
-}
-
-
-    public void updateVelocity(float deltaV)
-    {
-        this.velocity += deltaV * Time.deltaTime;
-    }
-    public void setVelocity(float V)
-    {
-        this.velocity = V;
+        fixedMaxSpeed = maxSpeed;
     }
     void turn()
     {
@@ -121,37 +100,59 @@ public class VehicleMovement2 : MonoBehaviour {
             transform.position = gm.lastCheckpointPos;
             transform.rotation = gm.lastCheckpointRot;
         }
-
-
-
-
-        
-
-       
-
-
-       
     }
 
+    public void setMaxSpeed(float newSpeed)
+    {
+        maxSpeed = newSpeed;
+    }
+    public void addMaxSpeed(float delteSpeed)
+    {
+        maxSpeed += delteSpeed;
+    }
+    public void resetMaxSpeed()
+    {
+        maxSpeed = fixedMaxSpeed;
+    }
 
+    public float getMaxSpeed()
+    {
+        return maxSpeed;
+    }
+    public float getfixedMaxSpeed()
+    {
+        //this value is used to reset the maxspeed variable
+        return fixedMaxSpeed;
+    }
+
+    public void updateVelocity(float deltaV)
+    {
+        this.velocity += deltaV * Time.deltaTime;
+    }
+    public void setVelocity(float V)
+    {
+        this.velocity = V;
+    }
 
 
     public void decreaseSpeed()
     {
-        velocity -= 2;
-        
-        
+        //Använd updateVelocity istället
+        updateVelocity(-2);
+
+
+
 
     }
 
 
     public void increaseSpeed()
     {
-        
-            velocity += 2;
-           
-       
-       
+        //Använd updateVelocity istället
+        updateVelocity(2);
+
+
+
 
     }
 
