@@ -2121,7 +2121,7 @@ Prefab:
         type: 2}
       propertyPath: player
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 517530746}
     - target: {fileID: 114629113140532056, guid: eb25328e8a5ac19438a628e7dbb57650,
         type: 2}
       propertyPath: pum
@@ -3219,7 +3219,7 @@ Prefab:
         type: 2}
       propertyPath: player
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 517530746}
     - target: {fileID: 1518511081900126, guid: d47e5380c7ef5c7489368282f85a20a3, type: 2}
       propertyPath: m_Name
       value: speedBoostObject (1)

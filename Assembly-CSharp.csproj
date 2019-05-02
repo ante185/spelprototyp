@@ -74,6 +74,7 @@
     <Compile Include="Assets\Allt\Scripts\EmilScripts\Medals.cs" />
     <Compile Include="Assets\Allt\Scripts\EmilScripts\MenuSystemAndHighScore\ClassA.cs" />
     <Compile Include="Assets\Allt\Scripts\EmilScripts\MenuSystemAndHighScore\ClassB.cs" />
+    <Compile Include="Assets\Allt\Scripts\EmilScripts\MenuSystemAndHighScore\ExitGame.cs" />
     <Compile Include="Assets\Allt\Scripts\EmilScripts\MenuSystemAndHighScore\List.cs" />
     <Compile Include="Assets\Allt\Scripts\EmilScripts\MenuSystemAndHighScore\LoadMenu.cs" />
     <Compile Include="Assets\Allt\Scripts\EmilScripts\MenuSystemAndHighScore\timeLoad.cs" />

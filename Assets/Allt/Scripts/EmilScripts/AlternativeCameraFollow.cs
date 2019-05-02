@@ -11,7 +11,11 @@ public class AlternativeCameraFollow : MonoBehaviour {
     public float smoothing = 0.125f;
     public float rayDistance = 1.0f;
     private Vector3 velocity = Vector3.zero;
+
+
     
+
+
     private bool test = false;
 
 

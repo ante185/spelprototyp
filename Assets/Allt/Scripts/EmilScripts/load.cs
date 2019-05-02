@@ -21,7 +21,13 @@ public class load : MonoBehaviour
     private void Update()
     {
        
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(0);
 
+
+
+        }
 
 
         if(startAndFinish.counter>=2)
