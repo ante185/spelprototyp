@@ -80,6 +80,9 @@
     <Compile Include="Assets\Allt\Scripts\EmilScripts\MenuSystemAndHighScore\timeLoad.cs" />
     <Compile Include="Assets\Allt\Scripts\EmilScripts\MenuSystemAndHighScore\VehicleRotation.cs" />
     <Compile Include="Assets\Allt\Scripts\EmilScripts\MiniMap.cs" />
+    <Compile Include="Assets\Allt\Scripts\EmilScripts\NewCheckPoint\CPC.cs" />
+    <Compile Include="Assets\Allt\Scripts\EmilScripts\NewCheckPoint\CPL.cs" />
+    <Compile Include="Assets\Allt\Scripts\EmilScripts\PickUpsScripts\PickUpManager.cs" />
     <Compile Include="Assets\Allt\Scripts\EmilScripts\PickUpsScripts\SpeedBoost.cs" />
     <Compile Include="Assets\Allt\Scripts\EmilScripts\PickUpsScripts\SpeedReduction.cs" />
     <Compile Include="Assets\Allt\Scripts\EmilScripts\PickUpsScripts\TimeAdd.cs" />

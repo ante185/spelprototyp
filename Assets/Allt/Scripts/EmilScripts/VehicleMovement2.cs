@@ -15,7 +15,7 @@ public class VehicleMovement2 : MonoBehaviour {
     
 
     
-    private GameMasterEmil gm;
+   // private GameMasterEmil gm;
     
     
     
@@ -24,7 +24,7 @@ public class VehicleMovement2 : MonoBehaviour {
    
     
     
-    
+ /*   
 
     // Use this for initialization
     void Start ()
@@ -34,7 +34,7 @@ public class VehicleMovement2 : MonoBehaviour {
 
         
 }
-
+*/
 
     public void updateVelocity(float deltaV)
     {
@@ -113,7 +113,7 @@ public class VehicleMovement2 : MonoBehaviour {
     }
 
 
-    private void Update()
+   /* private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -134,7 +134,7 @@ public class VehicleMovement2 : MonoBehaviour {
     }
 
 
-
+    */
 
     public void decreaseSpeed()
     {

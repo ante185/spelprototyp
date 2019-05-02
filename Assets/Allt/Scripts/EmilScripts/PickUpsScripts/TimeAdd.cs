@@ -4,52 +4,56 @@ using UnityEngine;
 
 public class TimeAdd : MonoBehaviour
 {
-
-    public Display pickUps;
-    private float delay = 5.0f;
-    private Renderer mesh;
-    
-    private Collider meshC;
-
     public bool timeIncrease = false;
-    private float itemTime;
 
 
-    private void Start()
-    {
-        mesh = GetComponent<MeshRenderer>();
-        meshC = GetComponent<BoxCollider>();
+    /*
+        public Display pickUps;
+        private float delay = 5.0f;
+        private Renderer mesh;
+
+        private Collider meshC;
+
+
+        private float itemTime;
+
+
+        private void Start()
+        {
+            mesh = GetComponent<MeshRenderer>();
+            meshC = GetComponent<BoxCollider>();
 
 
 
-    }
+        }
 
 
 
-    private void Update()
-    {
-        
+        private void Update()
+        {
 
-            if (timeIncrease)
-            {
-                itemTime += Time.deltaTime;
 
-                if (itemTime > delay)
+                if (timeIncrease)
                 {
+                    itemTime += Time.deltaTime;
+
+                    if (itemTime > delay)
+                    {
 
 
-                    
 
 
 
-                    itemTime = 0.0f;
-                mesh.enabled = true;
-                meshC.enabled = true;
-                timeIncrease = false;
+
+                        itemTime = 0.0f;
+                    mesh.enabled = true;
+                    meshC.enabled = true;
+                    timeIncrease = false;
+
+                    }
 
                 }
 
-            }
 
 
 
@@ -58,13 +62,12 @@ public class TimeAdd : MonoBehaviour
 
 
 
-       
 
 
 
-    }
- 
+        }
 
+        */
     void OnCollisionEnter(Collision other)
     {
         
@@ -80,13 +83,13 @@ public class TimeAdd : MonoBehaviour
 
 
 
-            pickUps.addTime();
+            //pickUps.addTime();
 
 
 
 
-            mesh.enabled = false;
-            meshC.enabled = false;
+            //mesh.enabled = false;
+            //meshC.enabled = false;
             timeIncrease = true;
 
 

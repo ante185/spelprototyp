@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class load : MonoBehaviour
 {
     public bool gameEnd = false;
-    public CheckpointEmil startAndFinish;
+    public CPL startAndFinish;
     
     public Display finalTimer;
     
