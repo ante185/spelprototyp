@@ -21,7 +21,8 @@ GameObject:
   - component: {fileID: 4401592305361124}
   - component: {fileID: 33627289475220214}
   - component: {fileID: 23970076053807100}
-  m_Layer: 0
+  - component: {fileID: 64389775111328980}
+  m_Layer: 10
   m_Name: Smol U turn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,4 +83,18 @@ MeshFilter:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1631093445181556}
+  m_Mesh: {fileID: 4300016, guid: 198bd239d7d54ab45a0b368a5d26f546, type: 3}
+--- !u!64 &64389775111328980
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1631093445181556}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300016, guid: 198bd239d7d54ab45a0b368a5d26f546, type: 3}

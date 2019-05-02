@@ -21,7 +21,8 @@ GameObject:
   - component: {fileID: 4859997117691176}
   - component: {fileID: 33886315890128658}
   - component: {fileID: 23642740631008290}
-  m_Layer: 0
+  - component: {fileID: 64173124584575546}
+  m_Layer: 10
   m_Name: Large turn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,4 +83,18 @@ MeshFilter:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1904161582745912}
+  m_Mesh: {fileID: 4300022, guid: 198bd239d7d54ab45a0b368a5d26f546, type: 3}
+--- !u!64 &64173124584575546
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1904161582745912}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300022, guid: 198bd239d7d54ab45a0b368a5d26f546, type: 3}
