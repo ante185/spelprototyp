@@ -6,6 +6,7 @@ TagManager:
   tags:
   - timeReduction
   - GM
+  - showOnPause
   layers:
   - Default
   - TransparentFX
