@@ -17,13 +17,19 @@ public class load : MonoBehaviour
     private BinaryFormatter bF = new BinaryFormatter();
     private FileStream fS;
 
+    public void exitFromPause()
+    {
+
+        SceneManager.LoadScene(0);
+
+    }
 
     private void Update()
     {
        
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            SceneManager.LoadScene(0);
+            //SceneManager.LoadScene(0);
 
 
 

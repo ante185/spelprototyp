@@ -77,6 +77,7 @@
     <Compile Include="Assets\Allt\Scripts\EmilScripts\MenuSystemAndHighScore\ExitGame.cs" />
     <Compile Include="Assets\Allt\Scripts\EmilScripts\MenuSystemAndHighScore\List.cs" />
     <Compile Include="Assets\Allt\Scripts\EmilScripts\MenuSystemAndHighScore\LoadMenu.cs" />
+    <Compile Include="Assets\Allt\Scripts\EmilScripts\MenuSystemAndHighScore\PauseScript.cs" />
     <Compile Include="Assets\Allt\Scripts\EmilScripts\MenuSystemAndHighScore\timeLoad.cs" />
     <Compile Include="Assets\Allt\Scripts\EmilScripts\MenuSystemAndHighScore\VehicleRotation.cs" />
     <Compile Include="Assets\Allt\Scripts\EmilScripts\MiniMap.cs" />
