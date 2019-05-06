@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Medals : MonoBehaviour
 {
-    private int goldMedal = 60;
-    private int silverMedal = 80;
-    private int bronzeMedal = 105;
+    public int goldMedal = 60;
+    public int silverMedal = 80;
+    public int bronzeMedal = 105;
     public Text text;
     public Display display;
     private int getTime;
@@ -17,8 +17,18 @@ public class Medals : MonoBehaviour
     private bool silverSwitch = false;
     private bool bronzeSwitch = false;
 
+    public bool silverr;
+    public bool bronzee;
+    public bool nothing;
+   
+    
+
+
     private void Start()
     {
+        silverr = false;
+        bronzee = false;
+        nothing = false;
         text.text = "To Win Gold: " + goldMedal.ToString();
         getSize = text.fontSize;
         getC = text.color;
@@ -37,6 +47,7 @@ public class Medals : MonoBehaviour
                 text.fontSize = getSize;
                 clock = 0.0f;
                 silver();
+                silverr = true;
                 switchBack = true;
             }
             
@@ -52,6 +63,8 @@ public class Medals : MonoBehaviour
                 text.fontSize = getSize;
                 clock = 0.0f;
                 bronze();
+                silverr = false;
+                bronzee = true;
                 silverSwitch = true;
             }
 
@@ -66,6 +79,8 @@ public class Medals : MonoBehaviour
                 text.fontSize = getSize;
                 clock = 0.0f;
                 timesUp();
+                bronzee = false;
+                nothing = true;
                 bronzeSwitch = true;
             }
 
