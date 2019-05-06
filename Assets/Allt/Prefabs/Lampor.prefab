@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4587616499367226}
   - component: {fileID: 108544996477011206}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Lampor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
