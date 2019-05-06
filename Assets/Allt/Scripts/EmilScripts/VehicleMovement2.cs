@@ -14,6 +14,11 @@ public class VehicleMovement2 : MonoBehaviour {
     private float velocity = 0; //keeps track of current speed
     private float fixedMaxSpeed; //this value is used to reset the maxspeed variable, shall not be changed.
 
+    public Transform from;
+    public Transform to;
+
+    private float timeCount = 0.0f;
+
     private GameMasterEmil gm;
     
     // Use this for initialization
@@ -94,6 +99,9 @@ public class VehicleMovement2 : MonoBehaviour {
 
     private void Update()
     {
+        to.rotation = new Quaternion(from.rotation.x, from.rotation.y, 0, from.rotation.w);
+        transform.rotation = Quaternion.Slerp(from.rotation, to.rotation, timeCount);
+        timeCount = timeCount + Time.deltaTime;
         if (Input.GetKeyDown(KeyCode.Space))
         {
             //Spelaren hamnar på samma plats och samma riktning som den senaste checkpointen
