@@ -24,8 +24,8 @@ public class VehicleMovement2 : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMasterEmil>();
-        transform.position = gm.lastCheckpointPos;
+       // gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMasterEmil>();
+       // transform.position = gm.lastCheckpointPos;
         fixedMaxSpeed = maxSpeed;
     }
     void turn()

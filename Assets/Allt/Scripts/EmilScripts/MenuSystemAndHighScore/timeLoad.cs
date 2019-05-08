@@ -21,7 +21,7 @@ public class timeLoad : MonoBehaviour
             lastTime = (ClassA)bF.Deserialize(fS);
 
 
-            text.text = "Your time: " + lastTime.finalTime.ToString() + "\n\n"+"Nr Of Completet Laps: " + lastTime.nrOfLaps.ToString();
+            text.text = "Your time: " + lastTime.finalTime.ToString() + "\n\n"+"Nr Of Completed Laps: " + lastTime.nrOfLaps.ToString();
 
             timeToGive = lastTime.finalTime;
 
