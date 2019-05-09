@@ -17,7 +17,7 @@ public class SpeedBoost : MonoBehaviour
     private void Start()
     {
         mesh = GetComponent<MeshRenderer>();
-        meshC = GetComponent<CapsuleCollider>();
+        meshC = GetComponent<SphereCollider>();
 
 
 

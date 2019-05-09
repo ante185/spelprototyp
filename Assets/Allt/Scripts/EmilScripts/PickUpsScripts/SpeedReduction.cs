@@ -14,7 +14,7 @@ public class SpeedReduction : MonoBehaviour
     private void Start()
     {
         mesh = GetComponent<MeshRenderer>();
-        meshC = GetComponent<CapsuleCollider>();
+        meshC = GetComponent<BoxCollider>();
 
 
 
@@ -75,7 +75,7 @@ public class SpeedReduction : MonoBehaviour
 
             // pum.setTrue(gameObject);
 
-
+            
             mesh.enabled = false;
             meshC.enabled = false;
             speedredu = true;

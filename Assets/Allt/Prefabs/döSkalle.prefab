@@ -9,47 +9,47 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1058992802132278}
+  m_RootGameObject: {fileID: 1388822619441794}
   m_IsPrefabAsset: 1
---- !u!1 &1058992802132278
+--- !u!1 &1388822619441794
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4037356862819702}
-  - component: {fileID: 33551550891555784}
-  - component: {fileID: 23445647860021076}
-  - component: {fileID: 114107003301839280}
-  - component: {fileID: 65590287111245664}
-  - component: {fileID: 114375441062727604}
+  - component: {fileID: 4331996925035904}
+  - component: {fileID: 33651139038733242}
+  - component: {fileID: 23690633821767598}
+  - component: {fileID: 65039684485724970}
+  - component: {fileID: 114172874670618268}
+  - component: {fileID: 114625125540826424}
   m_Layer: 0
-  m_Name: timeAdd
+  m_Name: "d\xF6Skalle"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4037356862819702
+--- !u!4 &4331996925035904
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1058992802132278}
+  m_GameObject: {fileID: 1388822619441794}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 135.69, y: 1.16, z: 34}
+  m_LocalPosition: {x: 134.23, y: 1.36, z: 49.038963}
   m_LocalScale: {x: 50, y: 50, z: 50}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23445647860021076
+--- !u!23 &23690633821767598
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1058992802132278}
+  m_GameObject: {fileID: 1388822619441794}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -59,7 +59,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 14d7dfb9409bc7b49ab56527a8b8fc12, type: 2}
+  - {fileID: 2100000, guid: d7a4a89decccb8047a98aae53371159f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -79,45 +79,46 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33551550891555784
+--- !u!33 &33651139038733242
 MeshFilter:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1058992802132278}
-  m_Mesh: {fileID: 4300000, guid: 7cf62202f4961e04db97cfc75c52e925, type: 3}
---- !u!65 &65590287111245664
+  m_GameObject: {fileID: 1388822619441794}
+  m_Mesh: {fileID: 4300000, guid: 0839d8fafe74c83469584d4569a76dee, type: 3}
+--- !u!65 &65039684485724970
 BoxCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1058992802132278}
+  m_GameObject: {fileID: 1388822619441794}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.019021131, y: 0.032978497, z: 0.03297301}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114107003301839280
+--- !u!114 &114172874670618268
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1058992802132278}
+  m_GameObject: {fileID: 1388822619441794}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ef9739f31ca91614089b01cfe6150fe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114375441062727604
+--- !u!114 &114625125540826424
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1058992802132278}
+  m_GameObject: {fileID: 1388822619441794}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8c988bd9f58ef71449bf2cc5e841abb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pickUps: {fileID: 0}
+  timeIncrease: 0

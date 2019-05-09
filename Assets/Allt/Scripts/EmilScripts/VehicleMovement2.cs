@@ -19,7 +19,7 @@ public class VehicleMovement2 : MonoBehaviour {
 
     private float timeCount = 0.0f;
 
-    private GameMasterEmil gm;
+    //private GameMasterEmil gm;
     
     // Use this for initialization
     void Start ()
@@ -102,12 +102,13 @@ public class VehicleMovement2 : MonoBehaviour {
         to.rotation = new Quaternion(from.rotation.x, from.rotation.y, 0, from.rotation.w);
         transform.rotation = Quaternion.Slerp(from.rotation, to.rotation, timeCount);
         timeCount = timeCount + Time.deltaTime;
-        if (Input.GetKeyDown(KeyCode.Space))
+       /* if (Input.GetKeyDown(KeyCode.Space))
         {
             //Spelaren hamnar på samma plats och samma riktning som den senaste checkpointen
             transform.position = gm.lastCheckpointPos;
             transform.rotation = gm.lastCheckpointRot;
         }
+        */
     }
 
     public void setMaxSpeed(float newSpeed)

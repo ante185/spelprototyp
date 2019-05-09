@@ -11,8 +11,8 @@ public class ItemRotation : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         rotation.x = 0;
-        rotation.y = 0;
-        rotation.z = 1;
+        rotation.y = 1;
+        rotation.z = 0;
 	}
 	
 	// Update is called once per frame

@@ -36,7 +36,7 @@ public class load : MonoBehaviour
         }
 
 
-        if(startAndFinish.counter>=2)
+        if(startAndFinish.counter>=4)
         {
            gameEnd = true;
 
