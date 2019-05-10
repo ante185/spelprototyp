@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class CharacterCreation : MonoBehaviour
@@ -45,5 +46,8 @@ public class CharacterCreation : MonoBehaviour
         selectionIndex = index;
         models[selectionIndex].SetActive(true);
     }
-	
+	public void ConfirmAndPlay()
+    {
+        SceneManager.LoadScene(1);
+    }
 }

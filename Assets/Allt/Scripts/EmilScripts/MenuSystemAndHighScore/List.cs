@@ -76,6 +76,10 @@ void Start()
 
 
     }
+    public void selectVehicle()
+    {
+        SceneManager.LoadScene(3);
+    }
 
 
 }
