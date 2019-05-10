@@ -19,6 +19,10 @@ public class VehicleMovement2 : MonoBehaviour {
 
     private float timeCount = 0.0f;
 
+
+    public allSound sound;
+
+
     //private GameMasterEmil gm;
     
     // Use this for initialization
@@ -109,6 +113,34 @@ public class VehicleMovement2 : MonoBehaviour {
             transform.rotation = gm.lastCheckpointRot;
         }
         */
+
+
+        if(velocity>=0 && velocity<=10)
+        {
+            if (sound.source.isPlaying == false)
+            {
+                sound.source.PlayOneShot(sound.engineStart);
+            }
+        }
+        if(velocity<0)
+        {
+            if (sound.source.isPlaying == false)
+            {
+                sound.source.PlayOneShot(sound.reverse);
+            }
+
+        }
+
+        if(velocity>10)
+        {
+            if (sound.source.isPlaying == false)
+            {
+                sound.source.PlayOneShot(sound.forward);
+            }
+        }
+      
+
+
     }
 
     public void setMaxSpeed(float newSpeed)

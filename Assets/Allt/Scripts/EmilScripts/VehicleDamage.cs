@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class VehicleDamage : MonoBehaviour
 {
-    public int health = 1000;
+    public int health = 20;
     public VehicleMovement2 vehicle;
-
-
+    public allSound sound;
+    public float rayDistance = 0.5f;
 
     private void FixedUpdate()
     {
@@ -24,27 +24,33 @@ public class VehicleDamage : MonoBehaviour
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         RaycastHit hit;
 
-        if (Physics.Raycast(transform.position, right, out hit, 1) && vehicle.getcurrentSpeed() >=5)
+        if (Physics.Raycast(transform.position, right, out hit, rayDistance) && vehicle.getcurrentSpeed() >=5 && hit.transform.tag!="pickUp")
         {
             health -= 1;
+
+            sound.source.PlayOneShot(sound.takingDamage);
+
         }
 
 
 
 
-        if (Physics.Raycast(transform.position, left, out hit, 1) && vehicle.getcurrentSpeed() >= 5)
+        if (Physics.Raycast(transform.position, left, out hit, rayDistance) && vehicle.getcurrentSpeed() >= 5 && hit.transform.tag != "pickUp")
         {
             health -= 1;
+            sound.source.PlayOneShot(sound.takingDamage);
         }
-        if (Physics.Raycast(transform.position, back, out hit, 1) && vehicle.getcurrentSpeed() >= 5)
+        if (Physics.Raycast(transform.position, back, out hit, rayDistance) && vehicle.getcurrentSpeed() >= 5 && hit.transform.tag != "pickUp")
         {
 
             health -= 1;
+            sound.source.PlayOneShot(sound.takingDamage);
         }
 
-         if (Physics.Raycast(transform.position, forward, out hit, 1) && vehicle.getcurrentSpeed() >= 5)
+         if (Physics.Raycast(transform.position, forward, out hit, rayDistance) && vehicle.getcurrentSpeed() >= 5 && hit.transform.tag != "pickUp")
          {
             health -= 1;
+            sound.source.PlayOneShot(sound.takingDamage);
         }
       
 

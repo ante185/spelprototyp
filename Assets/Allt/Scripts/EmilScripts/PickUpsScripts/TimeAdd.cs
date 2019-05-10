@@ -10,7 +10,7 @@ public class TimeAdd : MonoBehaviour
     private Renderer mesh;
     
     private Collider meshC;
-
+    public allSound sound;
     public bool timeIncrease = false;
     private float itemTime;
 
@@ -41,7 +41,7 @@ public class TimeAdd : MonoBehaviour
                     
 
 
-
+                
                     itemTime = 0.0f;
                 mesh.enabled = true;
                 meshC.enabled = true;
@@ -73,13 +73,13 @@ public class TimeAdd : MonoBehaviour
         {
 
 
-           
-               
-               
 
 
 
 
+
+
+            sound.source.PlayOneShot(sound.badPickup);
             pickUps.addTime();
 
 

@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Medals : MonoBehaviour
 {
-    public int goldMedal = 60;
-    public int silverMedal = 80;
-    public int bronzeMedal = 105;
+    public int goldMedal = 120;
+    public int silverMedal = 150;
+    public int bronzeMedal = 180;
     public Text text;
     public Display display;
     private int getTime;
@@ -20,7 +20,12 @@ public class Medals : MonoBehaviour
     public bool silverr;
     public bool bronzee;
     public bool nothing;
-   
+
+    public allSound sound;
+
+    private bool silverSound;
+    private bool bronzeSound;
+    private bool nothingSound;
     
 
 
@@ -49,6 +54,14 @@ public class Medals : MonoBehaviour
                 silver();
                 silverr = true;
                 switchBack = true;
+
+                if (silverSound == false)
+                {
+                    sound.source.PlayOneShot(sound.lostMedal);
+                    silverSound = true;
+                }
+
+
             }
             
 
@@ -66,6 +79,12 @@ public class Medals : MonoBehaviour
                 silverr = false;
                 bronzee = true;
                 silverSwitch = true;
+
+                if (bronzeSound == false)
+                {
+                    sound.source.PlayOneShot(sound.lostMedal);
+                    bronzeSound = true;
+                }
             }
 
 
@@ -82,6 +101,11 @@ public class Medals : MonoBehaviour
                 bronzee = false;
                 nothing = true;
                 bronzeSwitch = true;
+                if (nothingSound == false)
+                {
+                    sound.source.PlayOneShot(sound.lostMedal);
+                    nothingSound = true;
+                }
             }
 
 

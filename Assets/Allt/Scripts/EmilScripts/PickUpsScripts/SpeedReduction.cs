@@ -11,6 +11,7 @@ public class SpeedReduction : MonoBehaviour
     private Renderer mesh;
     private float reduceTimer;
     private Collider meshC;
+    public allSound sound;
     private void Start()
     {
         mesh = GetComponent<MeshRenderer>();
@@ -33,12 +34,12 @@ public class SpeedReduction : MonoBehaviour
                 {
 
 
+
+
+
+
+
                 
-
-
-
-
-
                     player.maxSpeed+= 2.5f;
                     player.increaseSpeed();
                     reduceTimer = 0.0f;
@@ -75,7 +76,7 @@ public class SpeedReduction : MonoBehaviour
 
             // pum.setTrue(gameObject);
 
-            
+            sound.source.PlayOneShot(sound.badPickup);
             mesh.enabled = false;
             meshC.enabled = false;
             speedredu = true;

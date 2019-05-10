@@ -11,7 +11,11 @@ public class load : MonoBehaviour
     public CPL startAndFinish;
     
     public Display finalTimer;
-    
+
+    public allSound sound;
+
+    private float timer = 0.0f;
+    private bool dontPlay;
     private int finalTimee;
     private ClassA classToHoldTime = new ClassA();
     private BinaryFormatter bF = new BinaryFormatter();
@@ -75,9 +79,19 @@ public class load : MonoBehaviour
 
     public void endGame()
     {
+        if(dontPlay==false)
+        {
+            sound.source.PlayOneShot(sound.GameOver);
+            dontPlay = true;
+        }
 
+        timer += Time.deltaTime;
+
+        if(timer>3.0f)
+        {
+            SceneManager.LoadScene(2);
+        }
         
-        SceneManager.LoadScene(2);
 
 
 

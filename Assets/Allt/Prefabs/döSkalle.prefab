@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114625125540826424}
   m_Layer: 0
   m_Name: "d\xF6Skalle"
-  m_TagString: Untagged
+  m_TagString: pickUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1388822619441794}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 134.23, y: 1.36, z: 49.038963}
+  m_LocalPosition: {x: 137.48, y: 1.98, z: 44.39}
   m_LocalScale: {x: 50, y: 50, z: 50}
   m_Children: []
   m_Father: {fileID: 0}

@@ -5,13 +5,16 @@ using UnityEngine;
 public class CPL : MonoBehaviour {
 
     public Vector3 previousCheckpointPos;
-    public Quaternion previousCheckpointRot;
+   // public Quaternion previousCheckpointRot;
     public VehicleMovement2 player;
     public VehicleDamage playerDamage;
     private int basicHealth;
     public List<CPC> checkpoints;
     private int nrOf;
     public int counter = 0;
+    public allSound sound;
+    private int previousCounter = 0;
+    
 
 
     // Use this for initialization
@@ -22,7 +25,7 @@ public class CPL : MonoBehaviour {
         if (nrOf > 0)
         {
             previousCheckpointPos = checkpoints[0].transform.position;
-            previousCheckpointRot = player.transform.rotation;
+            //previousCheckpointRot = player.transform.rotation;
 
         }
 
@@ -43,6 +46,14 @@ public class CPL : MonoBehaviour {
                 if (i == 0)
                 {
                     counter += 1;
+
+                    if(previousCounter!=counter)
+                    {
+                        sound.source.PlayOneShot(sound.completedLap);
+                        previousCounter = counter;
+
+                    }
+
                     previousCheckpointPos = checkpoints[i].transform.position;
                     checkpoints[i + 1].passed = true;
                     checkpoints[i].collision = false;
@@ -80,7 +91,11 @@ public class CPL : MonoBehaviour {
             if (nrOf > 0)
             {
                 player.transform.position = previousCheckpointPos;
-                player.transform.rotation = previousCheckpointRot;
+                //  player.transform.rotation = previousCheckpointRot;
+
+                sound.source.PlayOneShot(sound.respawn);
+
+
             }
 
             playerDamage.health = basicHealth;

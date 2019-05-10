@@ -8,7 +8,7 @@ public class SpeedBoost : MonoBehaviour
     private float delay = 5.0f;
     private const int nrOf = 50;
     public bool speedIncr = false;
-    
+    public allSound sound;
     private float boostTimer;
     private Renderer mesh;
 
@@ -67,9 +67,6 @@ public class SpeedBoost : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
 
-            
-                
-               
 
 
 
@@ -78,8 +75,11 @@ public class SpeedBoost : MonoBehaviour
 
 
 
-            
-            
+
+
+
+
+            sound.source.PlayOneShot(sound.goodPickup);
             player.increaseSpeed();
             player.maxSpeed += 10;
 
