@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 23348762217465126}
   - component: {fileID: 64017803353149420}
   m_Layer: 10
-  m_Name: Chikarn
+  m_Name: (Unuseable)Chikarn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
