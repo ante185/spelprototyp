@@ -8,6 +8,7 @@ TagManager:
   - GM
   - showOnPause
   - pickUp
+  - hinder
   layers:
   - Default
   - TransparentFX

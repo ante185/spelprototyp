@@ -36,7 +36,7 @@ GameObject:
   - component: {fileID: 4454888981895616}
   m_Layer: 0
   m_Name: hinder
-  m_TagString: Untagged
+  m_TagString: hinder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 54174118558089914}
   m_Layer: 0
   m_Name: pCube5
-  m_TagString: Untagged
+  m_TagString: hinder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
