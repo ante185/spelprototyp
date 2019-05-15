@@ -80,7 +80,7 @@ public class SpeedBoost : MonoBehaviour
 
 
             sound.source.PlayOneShot(sound.goodPickup);
-            player.increaseSpeed();
+            player.updateVelocity(15.0f / Time.deltaTime);
             player.maxSpeed += 10;
 
 

@@ -104,18 +104,20 @@ public class VehicleMovement2 : MonoBehaviour {
     private void Update()
     {
         to.rotation = new Quaternion(from.rotation.x, from.rotation.y, 0, from.rotation.w);
-        transform.rotation = Quaternion.Slerp(from.rotation, to.rotation, timeCount);
+        transform.rotation = Quaternion.SlerpUnclamped(transform.rotation, to.rotation, (1.0f/10000000000000000000000000.0f));
         timeCount = timeCount + Time.deltaTime;
-       /* if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             //Spelaren hamnar på samma plats och samma riktning som den senaste checkpointen
-            transform.position = gm.lastCheckpointPos;
-            transform.rotation = gm.lastCheckpointRot;
+            // transform.position = gm.lastCheckpointPos;
+            //transform.rotation = gm.lastCheckpointRot;
+            transform.rotation = new Quaternion(transform.rotation.x, transform.rotation.y, 0, transform.rotation.w);
+            
         }
-        */
 
 
-        if(velocity>=0 && velocity<=10)
+
+        if (velocity>=0 && velocity<=10)
         {
             if (sound.source.isPlaying == false)
             {

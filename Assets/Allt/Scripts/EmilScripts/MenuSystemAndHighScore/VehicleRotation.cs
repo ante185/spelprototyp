@@ -8,7 +8,7 @@ public class VehicleRotation : MonoBehaviour
 
     private void Start()
     {
-        rotate.y = Time.deltaTime*2;
+        rotate.y = Time.deltaTime*4;
     }
 
     // Update is called once per frame

@@ -5,7 +5,7 @@ using UnityEngine;
 public class CPL : MonoBehaviour {
 
     public Vector3 previousCheckpointPos;
-   // public Quaternion previousCheckpointRot;
+    public Quaternion previousCheckpointRot;
     public VehicleMovement2 player;
     public VehicleDamage playerDamage;
     private int basicHealth;
@@ -14,7 +14,9 @@ public class CPL : MonoBehaviour {
     public int counter = 0;
     public allSound sound;
     private int previousCounter = 0;
-    
+
+
+    public switchTex2 textSwitch;
 
 
     // Use this for initialization
@@ -25,7 +27,7 @@ public class CPL : MonoBehaviour {
         if (nrOf > 0)
         {
             previousCheckpointPos = checkpoints[0].transform.position;
-            //previousCheckpointRot = player.transform.rotation;
+            previousCheckpointRot = player.transform.rotation;
 
         }
 
@@ -55,6 +57,7 @@ public class CPL : MonoBehaviour {
                     }
 
                     previousCheckpointPos = checkpoints[i].transform.position;
+                    previousCheckpointRot = checkpoints[i].transform.rotation;
                     checkpoints[i + 1].passed = true;
                     checkpoints[i].collision = false;
                 }
@@ -62,6 +65,7 @@ public class CPL : MonoBehaviour {
                 else if (i != nrOf - 1 && i != 0)
                 {
                     previousCheckpointPos = checkpoints[i].transform.position;
+                    previousCheckpointRot = checkpoints[i].transform.rotation;
                     checkpoints[i + 1].passed = true;
                     checkpoints[i].collision = false;
 
@@ -72,6 +76,7 @@ public class CPL : MonoBehaviour {
                 else if (i == nrOf - 1)
                 {
                     previousCheckpointPos = checkpoints[i].transform.position;
+                    previousCheckpointRot = checkpoints[i].transform.rotation;
                     checkpoints[0].passed = true;
                     checkpoints[i].collision = false;
 
@@ -86,16 +91,17 @@ public class CPL : MonoBehaviour {
         }
 
 
-        if (playerDamage.health <= 0)
+        if (playerDamage.health <= 0 || Input.GetKeyDown(KeyCode.Return))
         {
-            if (nrOf > 0)
+            if (nrOf > 0 )
             {
                 player.transform.position = previousCheckpointPos;
-                //  player.transform.rotation = previousCheckpointRot;
+                player.transform.rotation = previousCheckpointRot;
 
                 sound.source.PlayOneShot(sound.respawn);
 
 
+                textSwitch.notTakingDamage();
             }
 
             playerDamage.health = basicHealth;

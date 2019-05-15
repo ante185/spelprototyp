@@ -71,7 +71,7 @@ public class SpeedReduction : MonoBehaviour
             if (speedredu == false)
             {
                 player.maxSpeed -= 2.5f;
-                player.decreaseSpeed();
+                player.updateVelocity(-30.0f / Time.deltaTime);
             }
 
             // pum.setTrue(gameObject);
