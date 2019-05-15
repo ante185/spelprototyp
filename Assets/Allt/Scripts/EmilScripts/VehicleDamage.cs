@@ -7,7 +7,7 @@ public class VehicleDamage : MonoBehaviour
     public int health = 100;
     public VehicleMovement2 vehicle;
     public allSound sound;
-    public switchTexture textSwitch;
+    public switchTex2 textSwitch;
     private int baseHealth;
     
     private void Start()

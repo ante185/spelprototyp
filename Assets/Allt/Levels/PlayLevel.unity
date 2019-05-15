@@ -6832,11 +6832,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1857334457}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95d81f0b3ef385c4c91a49838063bb85, type: 3}
+  m_Script: {fileID: 11500000, guid: 97836dadaa3f06a4c89c3dc073347325, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scratches: {fileID: 2800000, guid: 2b469995f7ed5dc41a5ddb6b0b8181aa, type: 3}
-  nonScratches: {fileID: 2800000, guid: 9cce02f7ebeb9784ea687291b078c5c6, type: 3}
+  black: {fileID: 2800000, guid: 9cce02f7ebeb9784ea687291b078c5c6, type: 3}
+  white: {fileID: 2800000, guid: 5e7debad1df15b74e801c2334a8171ad, type: 3}
+  scratches: {fileID: 2800000, guid: 05376b5cc4ff9e64399ddc3157fb8036, type: 3}
 --- !u!1 &1859849071
 GameObject:
   m_ObjectHideFlags: 0

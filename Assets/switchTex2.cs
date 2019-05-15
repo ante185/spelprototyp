@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class switchTexture : MonoBehaviour {
+public class switchTex2 : MonoBehaviour
+{
 
     public Texture black;
     public Texture white;
@@ -12,17 +13,18 @@ public class switchTexture : MonoBehaviour {
     private int selection;
 
     // Use this for initialization
-    void Awake () {
-        
+    void Awake()
+    {
+
         mr = GetComponent<Renderer>();
 
         selection = PlayerPrefs.GetInt("selection");
 
-        if(selection==1)
+        if (selection == 1)
         {
             mr.material.SetTexture("_MainTex", white);
         }
-        else if (selection!=1)
+        else if (selection != 1)
         {
             mr.material.SetTexture("_MainTex", black);
         }
@@ -32,7 +34,7 @@ public class switchTexture : MonoBehaviour {
 
 
     }
-	
+
 
     public void takingDamage()
     {
@@ -45,12 +47,12 @@ public class switchTexture : MonoBehaviour {
         mr.material.SetTexture("_MainTex", nonScratches);
     }
 
-   
-       
 
 
 
 
 
-	
+
+
+
 }
