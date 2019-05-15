@@ -11,14 +11,14 @@ public class ItemRotation : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         rotation.x = 0;
-        rotation.y = 1;
+        rotation.y = 50;
         rotation.z = 0;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-        transform.Rotate(rotation);
+        transform.Rotate(rotation * Time.deltaTime);
 		
 	}
 }

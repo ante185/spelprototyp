@@ -8,13 +8,14 @@ public class VehicleRotation : MonoBehaviour
 
     private void Start()
     {
-        rotate.y = Time.deltaTime*4;
+        //rotate.y = Time.deltaTime*4;
+        rotate.y = 15;
     }
 
     // Update is called once per frame
     void Update ()
     {
-        transform.Rotate(rotate);
+        transform.Rotate(rotate * Time.deltaTime);
         
 
 

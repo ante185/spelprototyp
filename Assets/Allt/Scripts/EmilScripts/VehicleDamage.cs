@@ -20,7 +20,7 @@ public class VehicleDamage : MonoBehaviour
     {
         if(other.gameObject.tag == "hinder")
         {
-            health = health - 10;
+            health = health - 20;
             sound.source.PlayOneShot(sound.takingDamage);
 
             if(health<baseHealth/2)
