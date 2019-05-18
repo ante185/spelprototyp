@@ -80,6 +80,7 @@
     <Compile Include="Assets\Allt\Scripts\EmilScripts\MenuSystemAndHighScore\confirmVehicle.cs" />
     <Compile Include="Assets\Allt\Scripts\EmilScripts\MenuSystemAndHighScore\ExitGame.cs" />
     <Compile Include="Assets\Allt\Scripts\EmilScripts\MenuSystemAndHighScore\gameOverMedals.cs" />
+    <Compile Include="Assets\Allt\Scripts\EmilScripts\MenuSystemAndHighScore\highScore.cs" />
     <Compile Include="Assets\Allt\Scripts\EmilScripts\MenuSystemAndHighScore\List.cs" />
     <Compile Include="Assets\Allt\Scripts\EmilScripts\MenuSystemAndHighScore\LoadMenu.cs" />
     <Compile Include="Assets\Allt\Scripts\EmilScripts\MenuSystemAndHighScore\PauseScript.cs" />

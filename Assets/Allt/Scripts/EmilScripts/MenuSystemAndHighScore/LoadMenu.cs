@@ -24,16 +24,18 @@ public class LoadMenu : MonoBehaviour
     }
     public void loadMenuWithoutSaving()
     {
-
+        PlayerPrefs.SetInt("save", 0);
         SceneManager.LoadScene(0);
-
+        
 
 
     }
 
   public  void loadMenuAndSave()
     {
-        
+        PlayerPrefs.SetInt("save", 1);
+
+        PlayerPrefs.SetString("name", acro);
 
 
 
@@ -41,8 +43,6 @@ public class LoadMenu : MonoBehaviour
 
 
 
-
-        
 
         //selS(list, 11);
 

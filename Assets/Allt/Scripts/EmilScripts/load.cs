@@ -61,7 +61,7 @@ public class load : MonoBehaviour
 
             fS.Close();
 
-
+            PlayerPrefs.SetInt("high", finalTimee);
 
 
 
