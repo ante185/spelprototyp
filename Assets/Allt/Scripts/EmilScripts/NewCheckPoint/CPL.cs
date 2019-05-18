@@ -15,6 +15,7 @@ public class CPL : MonoBehaviour {
     public allSound sound;
     private int previousCounter = 0;
 
+    public AlternativeCameraFollow view;
 
     public switchTex2 textSwitch;
 
@@ -97,6 +98,12 @@ public class CPL : MonoBehaviour {
             {
                 player.transform.position = previousCheckpointPos;
                 player.transform.rotation = previousCheckpointRot;
+
+                view.transform.rotation = previousCheckpointRot;
+                view.transform.position = previousCheckpointPos;
+
+
+
 
                 sound.source.PlayOneShot(sound.respawn);
 

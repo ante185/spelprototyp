@@ -4463,6 +4463,7 @@ MonoBehaviour:
   - {fileID: 1641033926}
   counter: 0
   sound: {fileID: 1179655276}
+  view: {fileID: 615900630}
   textSwitch: {fileID: 1857334461}
 --- !u!4 &890984845
 Transform:
