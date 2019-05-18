@@ -4355,8 +4355,7 @@ Transform:
 --- !u!54 &883591443
 Rigidbody:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 54174118558089914, guid: 72492f296a15d0c4d8c58928613787ef,
-    type: 2}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 883591441}
   serializedVersion: 2
