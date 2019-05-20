@@ -15,7 +15,8 @@ public class List : MonoBehaviour
     //private int counter = 0;
     public Text text;
     private string complete;
-    
+
+    public int timeScore;
 
 void Start()
     {
@@ -48,7 +49,7 @@ void Start()
 
             blabla = (ClassB)bF.Deserialize(fS);
 
-
+            timeScore = blabla.time[0];
 
             complete = blabla.name[0] + "  " + blabla.time[0].ToString() + "\n\n";
 
