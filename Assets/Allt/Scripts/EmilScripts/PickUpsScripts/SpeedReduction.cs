@@ -40,8 +40,7 @@ public class SpeedReduction : MonoBehaviour
 
 
                 
-                    player.maxSpeed+= 2.5f;
-                    player.increaseSpeed();
+                    player.resetMaxSpeed();
                     reduceTimer = 0.0f;
                     mesh.enabled = true;
                     meshC.enabled = true;

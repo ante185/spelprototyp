@@ -71,6 +71,8 @@ ModelImporter:
     100130: transform8
     100132: transform9
     100134: //RootNode
+    100136: Camera
+    100138: Lamp
     400000: BezierCurve
     400002: polySurface571.001
     400004: polySurface593.001
@@ -139,6 +141,9 @@ ModelImporter:
     400130: transform8
     400132: transform9
     400134: //RootNode
+    400136: Camera
+    400138: Lamp
+    2000000: Camera
     2100000: checkPoint
     2100002: Lampa
     2100004: tunnelStraight
@@ -197,6 +202,7 @@ ModelImporter:
     4300030: polySurface571.001
     4300032: polySurface593.002
     4300034: polySurface593.001
+    10800000: Lamp
     2186277476908879412: ImportLogs
   externalObjects: {}
   materials:

@@ -47,7 +47,7 @@ public class VehicleMovement2 : MonoBehaviour {
     void movement()
     {
 
-        if (Input.GetKey("w"))
+        if (Input.GetKey("w") && velocity < maxSpeed)
         {
             if (velocity < 0)
             {
@@ -62,7 +62,7 @@ public class VehicleMovement2 : MonoBehaviour {
                 velocity = maxSpeed;
             }
         }
-        else if (Input.GetKey("s"))
+        else if (Input.GetKey("s") && velocity > -maxSpeed * reverseFactor)
         {
             if (velocity > 0)
             {

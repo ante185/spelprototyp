@@ -32,20 +32,11 @@ public class SpeedBoost : MonoBehaviour
                 boostTimer += Time.deltaTime;
                 if (boostTimer > delay)
                 {
-
-
-                   
-
-
-
-
-
-                    player.decreaseSpeed();
-                    player.maxSpeed -= 10;
+                    player.resetMaxSpeed();
                     boostTimer = 0.0f;
-                mesh.enabled = true;
-                meshC.enabled = true;
-                speedIncr = false;
+                    mesh.enabled = true;
+                    meshC.enabled = true;
+                    speedIncr = false;
                 }
 
             }
