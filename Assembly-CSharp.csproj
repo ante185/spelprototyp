@@ -96,6 +96,7 @@
     <Compile Include="Assets\Allt\Scripts\EmilScripts\VehicleMovement2.cs" />
     <Compile Include="Assets\Allt\Scripts\moveObj.cs" />
     <Compile Include="Assets\Allt\Scripts\TristanScripts\CharacterCreation.cs" />
+    <Compile Include="Assets\Allt\Scripts\TristanScripts\HighScoreTable.cs" />
     <Compile Include="Assets\Allt\testScript\VehicleMovement3.cs" />
     <Compile Include="Assets\switchTex2.cs" />
     <Reference Include="UnityEditor.StandardEvents">
