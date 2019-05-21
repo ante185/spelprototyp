@@ -73,6 +73,9 @@ ModelImporter:
     100134: //RootNode
     100136: Camera
     100138: Lamp
+    100140: Camera.001
+    100142: Lamp.001
+    100144: Reserv
     400000: BezierCurve
     400002: polySurface571.001
     400004: polySurface593.001
@@ -143,7 +146,11 @@ ModelImporter:
     400134: //RootNode
     400136: Camera
     400138: Lamp
+    400140: Camera.001
+    400142: Lamp.001
+    400144: Reserv
     2000000: Camera
+    2000002: Camera.001
     2100000: checkPoint
     2100002: Lampa
     2100004: tunnelStraight
@@ -166,6 +173,7 @@ ModelImporter:
     2300030: polySurface596.011
     2300032: polySurface596.012
     2300034: polySurface596.013
+    2300036: Reserv
     3300000: BezierCurve
     3300002: polySurface571.001
     3300004: polySurface593.001
@@ -184,6 +192,7 @@ ModelImporter:
     3300030: polySurface596.011
     3300032: polySurface596.012
     3300034: polySurface596.013
+    3300036: Reserv
     4300000: BezierCurve
     4300002: polySurface596.013
     4300004: polySurface596.012
@@ -202,7 +211,9 @@ ModelImporter:
     4300030: polySurface571.001
     4300032: polySurface593.002
     4300034: polySurface593.001
+    4300036: Reserv
     10800000: Lamp
+    10800002: Lamp.001
     2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
