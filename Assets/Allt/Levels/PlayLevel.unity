@@ -7382,6 +7382,11 @@ Prefab:
       propertyPath: m_Convex
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 64545418742567088, guid: f45ad2ef35e44374894b8aef097ce2a6,
+        type: 2}
+      propertyPath: m_CookingOptions
+      value: 14
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f45ad2ef35e44374894b8aef097ce2a6, type: 2}
   m_IsPrefabAsset: 0
