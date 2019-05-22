@@ -21,35 +21,36 @@ public class HighScoreTable : MonoBehaviour
 
         highScoreEntryList = new List<HighscoreEntry>()
         {
-            new HighscoreEntry {name = HSname , score = score},
-            new HighscoreEntry {name = HSname , score = score},
-            new HighscoreEntry {name = HSname , score = score},
-            new HighscoreEntry {name = HSname , score = score},
-            new HighscoreEntry {name = HSname , score = score},
-            new HighscoreEntry {name = HSname , score = score},
-            new HighscoreEntry {name = HSname , score = score},
-            new HighscoreEntry {name = HSname , score = score},
-            new HighscoreEntry {name = HSname , score = score},
-            new HighscoreEntry {name = HSname , score = score},
+            //new HighscoreEntry {name = HSname , score = score},
+            //new HighscoreEntry {name = HSname , score = score},
+            //new HighscoreEntry {name = HSname , score = score},
+            //new HighscoreEntry {name = HSname , score = score},
+            //new HighscoreEntry {name = HSname , score = score},
+            //new HighscoreEntry {name = HSname , score = score},
+            //new HighscoreEntry {name = HSname , score = score},
+            //new HighscoreEntry {name = HSname , score = score},
+            //new HighscoreEntry {name = HSname , score = score},
+            //new HighscoreEntry {name = HSname , score = score}
 
-            //new HighscoreEntry {name = "Tristan" , score = 100},
-            //new HighscoreEntry {name = "fgrgaer" , score = 123},
-            //new HighscoreEntry {name = "srzssef" , score = 148},
-            //new HighscoreEntry {name = "<segzsreg" , score = 457},
-            //new HighscoreEntry {name = "szefzsef" , score = 424},
-            //new HighscoreEntry {name = "szefsef" , score = 999},
-            //new HighscoreEntry {name = "zsefzsefs" , score = 773},
-            //new HighscoreEntry {name = "zsfszefsze" , score = 486},
-            //new HighscoreEntry {name = "zsefss" , score = 157},
-            //new HighscoreEntry {name = "szefsss" , score = 111},
+            new HighscoreEntry {name = "Tristan" , score = 100},
+            new HighscoreEntry {name = "fgrgaer" , score = 123},
+            new HighscoreEntry {name = "srzssef" , score = 148},
+            new HighscoreEntry {name = "<segzsreg" , score = 457},
+            new HighscoreEntry {name = "szefzsef" , score = 424},
+            new HighscoreEntry {name = "szefsef" , score = 999},
+            new HighscoreEntry {name = "zsefzsefs" , score = 773},
+            new HighscoreEntry {name = "zsfszefsze" , score = 486},
+            new HighscoreEntry {name = "zsefss" , score = 157},
+            new HighscoreEntry {name = "szefsss" , score = 111},
         };
 
         //highScoreEntryTransformList = new List<Transform>();
         //highScoreEntryTransformList = new List<Transform>();
         //foreach (HighscoreEntry highscoreEntry in highScoreEntryList)
         //{
-        //    CreateHighScoreEntryTransform(highscoreEntry, entryContainer, highScoreEntryTransformList);
+        //    CreateHighScoreEntryTransform(HighscoreEntry, entryContainer, highScoreEntryTransformList);
         //}
+
     }
 
     private void CreateHighScoreEntryTransform(HighscoreEntry highscoreEntry, Transform container, List<Transform> transformList)
@@ -76,6 +77,7 @@ public class HighScoreTable : MonoBehaviour
 
         HSname = timeScore.name;
         entryTransform.Find("NameText").GetComponent<Text>().text = HSname;
+
 
         transformList.Add(entryTransform);
     }
