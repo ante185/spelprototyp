@@ -13,6 +13,7 @@ public class VehicleMovement2 : MonoBehaviour {
 
     private float velocity = 0; //keeps track of current speed
     private float fixedMaxSpeed; //this value is used to reset the maxspeed variable, shall not be changed.
+    private float slowDown;
 
     private Transform from;
     private Transform to;
@@ -31,6 +32,9 @@ public class VehicleMovement2 : MonoBehaviour {
        // gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMasterEmil>();
        // transform.position = gm.lastCheckpointPos;
         fixedMaxSpeed = maxSpeed;
+        InvokeRepeating("resetMaxSpeed", 1f, 1f);
+
+
     }
     void turn()
     {
@@ -156,7 +160,12 @@ public class VehicleMovement2 : MonoBehaviour {
     }
     public void resetMaxSpeed()
     {
-        maxSpeed = fixedMaxSpeed;
+        maxSpeed -= 2;
+
+        if (maxSpeed < fixedMaxSpeed)
+        {
+            maxSpeed = fixedMaxSpeed;
+        }
     }
 
     public float getMaxSpeed()

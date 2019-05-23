@@ -377,7 +377,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
-    m_LineSpacing: 1
+    m_LineSpacing: 1.2
   m_Text: name
 --- !u!222 &114514853
 CanvasRenderer:
@@ -617,7 +617,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8773585, g: 0.3186632, b: 0.3186632, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -722,8 +722,26 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
-    m_LineSpacing: 1
-  m_Text: 10
+    m_LineSpacing: 1.2
+  m_Text: '1:
+
+    2:
+
+    3:
+
+    4:
+
+    5:
+
+    6:
+
+    7:
+
+    8:
+
+    9:
+
+    10:'
 --- !u!222 &453658363
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -830,7 +848,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
-    m_LineSpacing: 1
+    m_LineSpacing: 1.2
   m_Text: 000
 --- !u!222 &592238356
 CanvasRenderer:
@@ -1419,7 +1437,6 @@ GameObject:
   - component: {fileID: 1233173258}
   - component: {fileID: 1233173257}
   - component: {fileID: 1233173256}
-  - component: {fileID: 1233173259}
   m_Layer: 5
   m_Name: highScoreList
   m_TagString: Untagged
@@ -1487,21 +1504,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -266, y: 82}
+  m_AnchoredPosition: {x: -761, y: 78}
   m_SizeDelta: {x: 160, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1233173259
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1233173255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b21679e29832eb449ae49ce91f34bcf3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeScore: {fileID: 719138174}
 --- !u!1 &1253000643
 GameObject:
   m_ObjectHideFlags: 0
