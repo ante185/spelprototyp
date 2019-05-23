@@ -14,8 +14,8 @@ public class VehicleMovement2 : MonoBehaviour {
     private float velocity = 0; //keeps track of current speed
     private float fixedMaxSpeed; //this value is used to reset the maxspeed variable, shall not be changed.
 
-    public Transform from;
-    public Transform to;
+    private Transform from;
+    private Transform to;
 
     private float timeCount = 0.0f;
 
@@ -103,6 +103,7 @@ public class VehicleMovement2 : MonoBehaviour {
 
     private void Update()
     {
+        from.rotation = transform.rotation;
         to.rotation = new Quaternion(from.rotation.x, from.rotation.y, 0, from.rotation.w);
         transform.rotation = Quaternion.SlerpUnclamped(transform.rotation, to.rotation, (1.0f/10000000000000000000000000.0f));
         timeCount = timeCount + Time.deltaTime;
@@ -114,7 +115,7 @@ public class VehicleMovement2 : MonoBehaviour {
             transform.rotation = new Quaternion(transform.rotation.x, transform.rotation.y, 0, transform.rotation.w);
             
         }
-
+        
 
 
         if (velocity>=0 && velocity<=10)
