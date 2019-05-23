@@ -10,6 +10,7 @@ public class VehicleDamage : MonoBehaviour
     public switchTex2 textSwitch;
     private int baseHealth;
     
+
     private void Start()
     {
         baseHealth = health;
@@ -18,9 +19,10 @@ public class VehicleDamage : MonoBehaviour
    
     private void OnCollisionEnter(Collision other)
     {
-        if(other.gameObject.tag == "hinder")
+        if (other.gameObject.tag == "hinder")
         {
             health = health - 20;
+
             sound.source.PlayOneShot(sound.takingDamage);
 
             if(health<baseHealth/2)

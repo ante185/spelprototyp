@@ -11,15 +11,14 @@ public class VehicleMovement2 : MonoBehaviour {
     public float breakForce = 1.0f;
     public float turnrate = 50f;
 
+    public float rotationLerpFac;
+
     private float velocity = 0; //keeps track of current speed
     private float fixedMaxSpeed; //this value is used to reset the maxspeed variable, shall not be changed.
     private float slowDown;
-
-    public Transform from;
-    public Transform to;
-
-    private float timeCount = 0.0f;
-
+    
+    private Quaternion targetRotation;
+    private Rigidbody rb;
 
     public allSound sound;
 
@@ -33,7 +32,7 @@ public class VehicleMovement2 : MonoBehaviour {
        // transform.position = gm.lastCheckpointPos;
         fixedMaxSpeed = maxSpeed;
         InvokeRepeating("resetMaxSpeed", 1f, 1f);
-
+        rb = GetComponent<Rigidbody>();
 
     }
     void turn()
@@ -89,8 +88,13 @@ public class VehicleMovement2 : MonoBehaviour {
                 velocity = 0;
             }
         }
-
-        this.transform.Translate(Vector3.forward * velocity * Time.deltaTime);
+        print(rb.velocity[2]);
+        if(rb.velocity[2] < velocity)
+        {
+            rb.AddForce(transform.forward * acceleration * 10);
+        }
+        //rb.MovePosition(transform.position + transform.forward * velocity * Time.deltaTime);
+        //this.transform.Translate(Vector3.forward * velocity * Time.deltaTime);
     }
 
 
@@ -107,18 +111,10 @@ public class VehicleMovement2 : MonoBehaviour {
 
     private void Update()
     {
-        to.rotation = new Quaternion(from.rotation.x, from.rotation.y, 0, from.rotation.w);
-        transform.rotation = Quaternion.SlerpUnclamped(transform.rotation, to.rotation, (1.0f/10000000000000000000000000.0f));
-        timeCount = timeCount + Time.deltaTime;
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            //Spelaren hamnar på samma plats och samma riktning som den senaste checkpointen
-            // transform.position = gm.lastCheckpointPos;
-            //transform.rotation = gm.lastCheckpointRot;
-            transform.rotation = new Quaternion(transform.rotation.x, transform.rotation.y, 0, transform.rotation.w);
-            
-        }
-
+        
+        targetRotation = new Quaternion(transform.rotation.x, transform.rotation.y, 0 , transform.rotation.w);
+        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation,  transform.rotation.z/10 );
+        
 
 
         if (velocity>=0 && velocity<=10)

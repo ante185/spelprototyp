@@ -36,7 +36,7 @@ public class Display : MonoBehaviour {
 
         vel = (int)vehicleStats.getcurrentSpeed();
 
-        speed.text = "Velocity: " + vel.ToString();
+        speed.text = "Thrust: " + vel.ToString();
 
 
     }
