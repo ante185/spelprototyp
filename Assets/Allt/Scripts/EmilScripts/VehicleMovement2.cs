@@ -21,7 +21,14 @@ public class VehicleMovement2 : MonoBehaviour {
     private Rigidbody rb;
 
     public allSound sound;
+    public bool respawn;
 
+
+    //private Ray ray;
+
+    //private RaycastHit hit;
+
+    //public float raycastOffset = 1.0f; 
 
     //private GameMasterEmil gm;
     
@@ -88,13 +95,13 @@ public class VehicleMovement2 : MonoBehaviour {
                 velocity = 0;
             }
         }
-        print(rb.velocity[2]);
-        if(rb.velocity[2] < velocity)
-        {
-            rb.AddForce(transform.forward * acceleration * 10);
-        }
-        //rb.MovePosition(transform.position + transform.forward * velocity * Time.deltaTime);
-        //this.transform.Translate(Vector3.forward * velocity * Time.deltaTime);
+        //print(rb.velocity[2]);
+        //if(rb.velocity[2] < velocity)
+        //{
+        //    rb.AddForce(transform.forward * acceleration * 10);
+        //}
+        rb.MovePosition(transform.position + transform.forward * velocity * Time.deltaTime);
+        this.transform.Translate(Vector3.forward * velocity * Time.deltaTime);
     }
 
 
@@ -106,15 +113,29 @@ public class VehicleMovement2 : MonoBehaviour {
         turn();
         movement();
         //print(velocity);
+
+
+        /* ray = new Ray(transform.position, -transform.up);
+         if (Physics.Raycast(ray, out hit, raycastOffset))
+         {
+             targetRotation = new Quaternion(0, transform.rotation.y, transform.rotation.z, transform.rotation.w);
+             transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, 0.5f);
+
+
+         }
+
+ */
+        targetRotation = new Quaternion(transform.rotation.x, transform.rotation.y, 0, transform.rotation.w);
+        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, 0.01f);
     }
 
 
     private void Update()
     {
-        
-        targetRotation = new Quaternion(transform.rotation.x, transform.rotation.y, 0 , transform.rotation.w);
-        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation,  transform.rotation.z/10 );
-        
+        //targetRotation = new Quaternion(transform.rotation.x, transform.rotation.y, 0, transform.rotation.w);
+        //transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, transform.rotation.z / 10);
+
+
 
 
         if (velocity>=0 && velocity<=10)
@@ -208,8 +229,17 @@ public class VehicleMovement2 : MonoBehaviour {
     {
         return velocity;
     }
-        
-  
+
+    private void OnTriggerEnter(Collider other)
+    {
+       if(other.tag=="net")
+        {
+            respawn = true;
+        }
+
+
+
+    }
 
 
 }

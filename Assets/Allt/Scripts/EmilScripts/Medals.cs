@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Medals : MonoBehaviour
 {
-    public int goldMedal = 120;
-    public int silverMedal = 150;
-    public int bronzeMedal = 180;
+    public int goldMedal = 540;
+    public int silverMedal = 600;
+    public int bronzeMedal = 660;
     public Text text;
     public Display display;
     private int getTime;

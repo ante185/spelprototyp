@@ -9,6 +9,7 @@ TagManager:
   - showOnPause
   - pickUp
   - hinder
+  - net
   layers:
   - Default
   - TransparentFX
