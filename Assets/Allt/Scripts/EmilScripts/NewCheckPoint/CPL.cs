@@ -92,7 +92,7 @@ public class CPL : MonoBehaviour {
         }
 
 
-        if (playerDamage.health <= 0 || Input.GetKeyDown(KeyCode.Return))
+        if (playerDamage.health <= 0 || Input.GetKeyDown(KeyCode.Return)|| player.respawn)
         {
             if (nrOf > 0 )
             {
@@ -101,7 +101,7 @@ public class CPL : MonoBehaviour {
 
                 view.transform.rotation = previousCheckpointRot;
                 view.transform.position = previousCheckpointPos;
-
+                player.respawn = false;
 
 
 

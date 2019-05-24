@@ -24,6 +24,7 @@ public class VehicleMovement2 : MonoBehaviour {
     private Rigidbody rb;
 
     public allSound sound;
+    public bool respawn;
 
     
     // Use this for initialization
@@ -189,8 +190,17 @@ public class VehicleMovement2 : MonoBehaviour {
     {
         return velocity;
     }
-        
-  
+
+    private void OnTriggerEnter(Collider other)
+    {
+       if(other.tag=="net")
+        {
+            respawn = true;
+        }
+
+
+
+    }
 
 
 }

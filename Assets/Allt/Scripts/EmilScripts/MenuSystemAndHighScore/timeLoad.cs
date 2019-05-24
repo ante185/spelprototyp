@@ -12,7 +12,7 @@ public class timeLoad : MonoBehaviour
     public Text text;
     private FileStream fS;
     public int timeToGive;
-    private void Start()
+    private void Awake()
     {
         if (File.Exists(Application.persistentDataPath + "HighScoreTwo.dat"))
         {

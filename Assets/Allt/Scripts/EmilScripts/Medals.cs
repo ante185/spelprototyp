@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Medals : MonoBehaviour
 {
-    public int goldMedal = 120;
-    public int silverMedal = 150;
-    public int bronzeMedal = 180;
+    public int goldMedal = 540;
+    public int silverMedal = 600;
+    public int bronzeMedal = 660;
     public Text text;
     public Display display;
     private int getTime;
@@ -34,7 +34,7 @@ public class Medals : MonoBehaviour
         silverr = false;
         bronzee = false;
         nothing = false;
-        text.text = "To Win Gold: " + goldMedal.ToString();
+        text.text = "Finish the Game within: " + goldMedal.ToString() + "\nseconds,\nto win a Goldmedal!";
         getSize = text.fontSize;
         getC = text.color;
     }
@@ -122,12 +122,12 @@ public class Medals : MonoBehaviour
     }
     private void bronze()
     {
-        text.text = "The Goal for Bronze is: " + bronzeMedal.ToString();
+        text.text = "Finish the Game within: " + bronzeMedal.ToString() + "\nseconds,\nto win a Bronzemedal!";
     }
 
     private void silver()
     {
-        text.text = "You can still win Silver! " + silverMedal.ToString();
+        text.text = "Finish the Game within: " + silverMedal.ToString() + "\nseconds,\nto win a Silvermedal!";
 
 
 
