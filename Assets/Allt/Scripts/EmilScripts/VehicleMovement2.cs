@@ -13,6 +13,9 @@ public class VehicleMovement2 : MonoBehaviour {
 
     public float rotationLerpFac;
 
+    public Vector3 speed;
+    
+
     private float velocity = 0; //keeps track of current speed
     private float fixedMaxSpeed; //this value is used to reset the maxspeed variable, shall not be changed.
     private float slowDown;
@@ -22,28 +25,23 @@ public class VehicleMovement2 : MonoBehaviour {
 
     public allSound sound;
 
-
-    //private GameMasterEmil gm;
     
     // Use this for initialization
     void Start ()
     {
-       // gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMasterEmil>();
-       // transform.position = gm.lastCheckpointPos;
         fixedMaxSpeed = maxSpeed;
         InvokeRepeating("resetMaxSpeed", 1f, 1f);
         rb = GetComponent<Rigidbody>();
-
     }
     void turn()
     {
         if (Input.GetKey("d"))
         {
-            this.transform.RotateAround(this.transform.position, new Vector3(0, 1, 0), turnrate * Time.deltaTime * (velocity / maxSpeed));
+            this.transform.RotateAround(this.transform.position, new Vector3(0, 1, 0), 2 + turnrate * Time.deltaTime * (velocity / maxSpeed));
         }
         if (Input.GetKey("a"))
         {
-            this.transform.RotateAround(this.transform.position, new Vector3(0, 1, 0), -turnrate * Time.deltaTime * (velocity / maxSpeed));
+            this.transform.RotateAround(this.transform.position, new Vector3(0, 1, 0), -2 + -turnrate * Time.deltaTime * (velocity / maxSpeed));
         }
     }
 
@@ -88,13 +86,15 @@ public class VehicleMovement2 : MonoBehaviour {
                 velocity = 0;
             }
         }
-        print(rb.velocity[2]);
-        if(rb.velocity[2] < velocity)
+        if(speed[2] < velocity && velocity != 0)
         {
-            rb.AddForce(transform.forward * acceleration * 10);
+            rb.AddForce(transform.forward * acceleration * 5);
         }
-        //rb.MovePosition(transform.position + transform.forward * velocity * Time.deltaTime);
-        //this.transform.Translate(Vector3.forward * velocity * Time.deltaTime);
+        else if (speed[2] > velocity && velocity != 0)
+        {
+            rb.AddForce(-transform.forward * acceleration * 5);
+        }
+        
     }
 
 
@@ -105,15 +105,18 @@ public class VehicleMovement2 : MonoBehaviour {
     {
         turn();
         movement();
-        //print(velocity);
+
+        Matrix4x4 toLocal = Matrix4x4.TRS(transform.position, transform.rotation, transform.localScale);
+        speed = toLocal.MultiplyVector(rb.velocity);
+
+        targetRotation = new Quaternion(transform.rotation.x, transform.rotation.y, 0, transform.rotation.w);
+        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, transform.rotation.z / 10);
     }
 
 
     private void Update()
     {
         
-        targetRotation = new Quaternion(transform.rotation.x, transform.rotation.y, 0 , transform.rotation.w);
-        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation,  transform.rotation.z/10 );
         
 
 
@@ -180,28 +183,6 @@ public class VehicleMovement2 : MonoBehaviour {
     public void setVelocity(float V)
     {
         this.velocity = V;
-    }
-
-
-    public void decreaseSpeed()
-    {
-        //Använd updateVelocity istället
-        updateVelocity(-2);
-
-
-
-
-    }
-
-
-    public void increaseSpeed()
-    {
-        //Använd updateVelocity istället
-        updateVelocity(2);
-
-
-
-
     }
 
     public float getcurrentSpeed()

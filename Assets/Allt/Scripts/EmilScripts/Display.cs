@@ -14,9 +14,9 @@ public class Display : MonoBehaviour {
     public bool timeStop = false;
     private int vel;
     public int laps;
-    
 
- 
+
+
 
     // Update is called once per frame
     void Update()
