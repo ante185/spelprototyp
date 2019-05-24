@@ -12,8 +12,8 @@ public class gameOverMedals : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-
-
+        
+        
         if(time.timeToGive>180)
         {
             GetComponent<GameObject>().SetActive(false);
