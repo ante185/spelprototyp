@@ -15,6 +15,7 @@ public class VehicleMovement2 : MonoBehaviour
     public float rotationLerpFac;
 
     public Vector3 speed;
+    public Vector3 rbSpeed;
 
 
     private float velocity = 0; //keeps track of current speed
@@ -31,6 +32,7 @@ public class VehicleMovement2 : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        Physics.gravity = new Vector3(0, -30f, 0);
         fixedMaxSpeed = maxSpeed;
         InvokeRepeating("resetMaxSpeed", 1f, 1f);
         rb = GetComponent<Rigidbody>();
@@ -39,11 +41,11 @@ public class VehicleMovement2 : MonoBehaviour
     {
         if (Input.GetKey("d"))
         {
-            this.transform.RotateAround(this.transform.position, new Vector3(0, 1, 0), 2 + turnrate * Time.deltaTime * (velocity / maxSpeed));
+            this.transform.RotateAround(this.transform.position, new Vector3(0, 1, 0), 1 + turnrate * Time.deltaTime * (velocity / maxSpeed));
         }
         if (Input.GetKey("a"))
         {
-            this.transform.RotateAround(this.transform.position, new Vector3(0, 1, 0), -2 + -turnrate * Time.deltaTime * (velocity / maxSpeed));
+            this.transform.RotateAround(this.transform.position, new Vector3(0, 1, 0), -1 + -turnrate * Time.deltaTime * (velocity / maxSpeed));
         }
     }
 
@@ -108,8 +110,12 @@ public class VehicleMovement2 : MonoBehaviour
         turn();
         movement();
 
+
         Matrix4x4 toLocal = Matrix4x4.TRS(transform.position, transform.rotation, transform.localScale);
         speed = toLocal.MultiplyVector(rb.velocity);
+
+        //rb.velocity = toLocal.inverse.MultiplyVector(speed);
+        rbSpeed = rb.velocity;
 
         targetRotation = new Quaternion(0, transform.rotation.y, 0, transform.rotation.w);
         transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, transform.rotation.z / 10);
@@ -181,6 +187,10 @@ public class VehicleMovement2 : MonoBehaviour
     public void updateVelocity(float deltaV)
     {
         this.velocity += deltaV * Time.deltaTime;
+    }
+    public void updateThrust(float deltaV)
+    {
+        rb.AddForce(transform.forward * deltaV);
     }
     public void setVelocity(float V)
     {
