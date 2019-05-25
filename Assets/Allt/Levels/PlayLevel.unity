@@ -2886,8 +2886,7 @@ MonoBehaviour:
   deacceleration: 0.5
   breakForce: 10
   turnrate: 100
-  from: {fileID: 517530751}
-  to: {fileID: 517530751}
+  rotationLerpFac: 0
   sound: {fileID: 1179655276}
 --- !u!54 &517530747
 Rigidbody:
@@ -2896,8 +2895,8 @@ Rigidbody:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 517530745}
   serializedVersion: 2
-  m_Mass: 10
-  m_Drag: 0
+  m_Mass: 1
+  m_Drag: 1
   m_AngularDrag: 5
   m_UseGravity: 1
   m_IsKinematic: 0
