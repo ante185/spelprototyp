@@ -96,7 +96,7 @@ public class VehicleMovement2 : MonoBehaviour
         }
         else if (speed[2] > velocity && velocity != 0)
         {
-            rb.AddForce(-transform.forward * acceleration * 5);
+            rb.AddForce(-transform.forward * acceleration * 5 * reverseFactor);
         }
 
     }
