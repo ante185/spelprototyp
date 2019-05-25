@@ -16,7 +16,7 @@ public class gameOverMedals : MonoBehaviour {
         
         if(time.timeToGive>180)
         {
-            GetComponent<GameObject>().SetActive(false);
+            GetComponent<Image>().sprite = bronze;
 
         }
         if (time.timeToGive <= 120)
