@@ -2882,9 +2882,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSpeed: 50
   reverseFactor: 0.7
-  acceleration: 10
+  acceleration: 20
   deacceleration: 5
-  breakForce: 10
+  breakForce: 15
   turnrate: 100
   rotationLerpFac: 0
   speed: {x: 0, y: 0, z: 0}
