@@ -70,6 +70,7 @@ public class Medals : MonoBehaviour
         if (getTime > silverMedal - 10 && silverSwitch == false)
         {
             switchToAnotherColor();
+            clock += Time.deltaTime;
             if (clock > 10.0f)
             {
                 text.color = getC;
@@ -92,6 +93,7 @@ public class Medals : MonoBehaviour
         if (getTime > bronzeMedal - 10 && bronzeSwitch == false)
         {
             switchToAnotherColor();
+            clock += Time.deltaTime;
             if (clock > 10.0f)
             {
                 text.color = getC;
@@ -116,7 +118,7 @@ public class Medals : MonoBehaviour
     }
     private void timesUp()
     {
-        text.text = "Out of Time For a Medal :(";
+        text.text = "You can only \nget Bronze now :(";
 
 
     }

@@ -19,11 +19,11 @@ public class medalsImage : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if(whenToSwitch.silverr)
+        if(whenToSwitch.silverr==true && whenToSwitch.bronzee==false)
         {
             GetComponent<Image>().sprite = silver;
         }
-        else if(whenToSwitch.bronzee)
+        if(whenToSwitch.bronzee)
         {
             GetComponent<Image>().sprite = bronze;
         }
