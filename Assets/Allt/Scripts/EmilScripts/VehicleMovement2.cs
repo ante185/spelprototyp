@@ -188,6 +188,10 @@ public class VehicleMovement2 : MonoBehaviour
     {
         this.velocity += deltaV * Time.deltaTime;
     }
+    public void updateThrust(float deltaV)
+    {
+        rb.AddForce(transform.forward * deltaV);
+    }
     public void setVelocity(float V)
     {
         this.velocity = V;
