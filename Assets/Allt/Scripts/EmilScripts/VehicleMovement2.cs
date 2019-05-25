@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VehicleMovement2 : MonoBehaviour {
+public class VehicleMovement2 : MonoBehaviour
+{
 
     public float maxSpeed = 5; //Ideal maximum velocity, velocity will never equal maxSpeed on it's own
     public float reverseFactor = 1; //faktor that limits reverse speed, 0.5 equals a max reverse speed of half maxSpeed
@@ -13,37 +14,36 @@ public class VehicleMovement2 : MonoBehaviour {
 
     public float rotationLerpFac;
 
+    public Vector3 speed;
+
+
     private float velocity = 0; //keeps track of current speed
     private float fixedMaxSpeed; //this value is used to reset the maxspeed variable, shall not be changed.
     private float slowDown;
-    
+
     private Quaternion targetRotation;
     private Rigidbody rb;
 
     public allSound sound;
+    public bool respawn;
 
 
-    //private GameMasterEmil gm;
-    
     // Use this for initialization
-    void Start ()
+    void Start()
     {
-       // gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMasterEmil>();
-       // transform.position = gm.lastCheckpointPos;
         fixedMaxSpeed = maxSpeed;
         InvokeRepeating("resetMaxSpeed", 1f, 1f);
         rb = GetComponent<Rigidbody>();
-
     }
     void turn()
     {
         if (Input.GetKey("d"))
         {
-            this.transform.RotateAround(this.transform.position, new Vector3(0, 1, 0), turnrate * Time.deltaTime * (velocity / maxSpeed));
+            this.transform.RotateAround(this.transform.position, new Vector3(0, 1, 0), 2 + turnrate * Time.deltaTime * (velocity / maxSpeed));
         }
         if (Input.GetKey("a"))
         {
-            this.transform.RotateAround(this.transform.position, new Vector3(0, 1, 0), -turnrate * Time.deltaTime * (velocity / maxSpeed));
+            this.transform.RotateAround(this.transform.position, new Vector3(0, 1, 0), -2 + -turnrate * Time.deltaTime * (velocity / maxSpeed));
         }
     }
 
@@ -88,43 +88,48 @@ public class VehicleMovement2 : MonoBehaviour {
                 velocity = 0;
             }
         }
-        print(rb.velocity[2]);
-        if(rb.velocity[2] < velocity)
+        if (speed[2] < velocity && velocity != 0)
         {
-            rb.AddForce(transform.forward * acceleration * 10);
+            rb.AddForce(transform.forward * acceleration * 5);
         }
-        //rb.MovePosition(transform.position + transform.forward * velocity * Time.deltaTime);
-        //this.transform.Translate(Vector3.forward * velocity * Time.deltaTime);
+        else if (speed[2] > velocity && velocity != 0)
+        {
+            rb.AddForce(-transform.forward * acceleration * 5);
+        }
+
     }
 
 
 
 
-    
-    void FixedUpdate ()
+
+    void FixedUpdate()
     {
         turn();
         movement();
-        //print(velocity);
+
+        Matrix4x4 toLocal = Matrix4x4.TRS(transform.position, transform.rotation, transform.localScale);
+        speed = toLocal.MultiplyVector(rb.velocity);
+
+        targetRotation = new Quaternion(0, transform.rotation.y, 0, transform.rotation.w);
+        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, transform.rotation.z / 10);
     }
 
 
     private void Update()
     {
-        
-        targetRotation = new Quaternion(transform.rotation.x, transform.rotation.y, 0 , transform.rotation.w);
-        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation,  transform.rotation.z/10 );
-        
 
 
-        if (velocity>=0 && velocity<=10)
+
+
+        if (velocity >= 0 && velocity <= 10)
         {
             if (sound.source.isPlaying == false)
             {
                 sound.source.PlayOneShot(sound.engineStart);
             }
         }
-        if(velocity<0)
+        if (velocity < 0)
         {
             if (sound.source.isPlaying == false)
             {
@@ -133,14 +138,14 @@ public class VehicleMovement2 : MonoBehaviour {
 
         }
 
-        if(velocity>10)
+        if (velocity > 10)
         {
             if (sound.source.isPlaying == false)
             {
                 sound.source.PlayOneShot(sound.forward);
             }
         }
-      
+
 
 
     }
@@ -182,34 +187,21 @@ public class VehicleMovement2 : MonoBehaviour {
         this.velocity = V;
     }
 
-
-    public void decreaseSpeed()
-    {
-        //Använd updateVelocity istället
-        updateVelocity(-2);
-
-
-
-
-    }
-
-
-    public void increaseSpeed()
-    {
-        //Använd updateVelocity istället
-        updateVelocity(2);
-
-
-
-
-    }
-
     public float getcurrentSpeed()
     {
         return velocity;
     }
-        
-  
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "net")
+        {
+            respawn = true;
+        }
+
+
+
+    }
 
 
 }
