@@ -65,7 +65,7 @@ public class TimeAdd : MonoBehaviour
     }
  
 
-    void OnCollisionEnter(Collision other)
+    void OnTriggerEnter(Collider other)
     {
         
 

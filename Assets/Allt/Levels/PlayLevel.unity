@@ -7301,11 +7301,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4331996925035904, guid: 74347011a7166bc43b1c13956f69ede5, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 122.02
+      value: 114.24
       objectReference: {fileID: 0}
     - target: {fileID: 4331996925035904, guid: 74347011a7166bc43b1c13956f69ede5, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2.15
+      value: 1.86
       objectReference: {fileID: 0}
     - target: {fileID: 4331996925035904, guid: 74347011a7166bc43b1c13956f69ede5, type: 2}
       propertyPath: m_LocalPosition.z
@@ -7336,15 +7336,15 @@ Prefab:
       propertyPath: pickUps
       value: 
       objectReference: {fileID: 628946274}
-    - target: {fileID: 1388822619441794, guid: 74347011a7166bc43b1c13956f69ede5, type: 2}
-      propertyPath: m_Name
-      value: "d\xF6Skalle (1)"
-      objectReference: {fileID: 0}
     - target: {fileID: 114625125540826424, guid: 74347011a7166bc43b1c13956f69ede5,
         type: 2}
       propertyPath: sound
       value: 
       objectReference: {fileID: 1179655276}
+    - target: {fileID: 1388822619441794, guid: 74347011a7166bc43b1c13956f69ede5, type: 2}
+      propertyPath: m_Name
+      value: "d\xF6Skalle (1)"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74347011a7166bc43b1c13956f69ede5, type: 2}
   m_IsPrefabAsset: 0
@@ -7538,11 +7538,6 @@ Prefab:
       propertyPath: sound
       value: 
       objectReference: {fileID: 1179655276}
-    - target: {fileID: 23758908155240538, guid: 94630e60d08dc0846a8a393fb1fd298e,
-        type: 2}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 1a9b11107fa66ac40bc7e81da0be338d, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94630e60d08dc0846a8a393fb1fd298e, type: 2}
   m_IsPrefabAsset: 0

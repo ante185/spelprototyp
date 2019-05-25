@@ -63,7 +63,7 @@ public class SpeedReduction : MonoBehaviour
     }
 
 
-    void OnCollisionEnter(Collision other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
