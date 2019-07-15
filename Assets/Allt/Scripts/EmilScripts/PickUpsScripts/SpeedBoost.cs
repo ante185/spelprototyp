@@ -52,7 +52,7 @@ public class SpeedBoost : MonoBehaviour
     }
   
 
-    void OnCollisionEnter(Collision other)
+    void OnTriggerEnter(Collider other)
     {
 
         if (other.gameObject.CompareTag("Player"))
@@ -71,7 +71,7 @@ public class SpeedBoost : MonoBehaviour
 
 
             sound.source.PlayOneShot(sound.goodPickup);
-            player.updateVelocity(15.0f / Time.deltaTime);
+            player.updateThrust(15.0f);
             player.maxSpeed += 10;
 
 

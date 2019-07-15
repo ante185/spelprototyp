@@ -63,14 +63,14 @@ public class SpeedReduction : MonoBehaviour
     }
 
 
-    void OnCollisionEnter(Collision other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
             if (speedredu == false)
             {
                 player.maxSpeed -= 2.5f;
-                player.updateVelocity(-30.0f / Time.deltaTime);
+                player.updateThrust(-30.0f);
             }
 
             // pum.setTrue(gameObject);
