@@ -71,8 +71,8 @@ public class SpeedBoost : MonoBehaviour
 
 
             sound.source.PlayOneShot(sound.goodPickup);
-            player.updateThrust(15.0f);
-            player.maxSpeed += 10;
+            player.updateThrust(30.0f);
+            player.maxSpeed += 20;
 
 
             mesh.enabled = false;

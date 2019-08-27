@@ -62,10 +62,10 @@ public class VehicleMovement2 : MonoBehaviour
             {
                 updateVelocity(acceleration - acceleration * (velocity / maxSpeed));
             }
-            else
-            {
-                velocity = maxSpeed;
-            }
+            //else
+            //{
+            //    velocity = maxSpeed;
+            //}
         }
         else if (Input.GetKey("s") && velocity > -maxSpeed * reverseFactor)
         {

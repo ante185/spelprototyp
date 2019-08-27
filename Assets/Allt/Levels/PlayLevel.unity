@@ -2880,10 +2880,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eb8e55926c595041902987c1fa0fd95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 50
+  maxSpeed: 250
   reverseFactor: 0.7
-  acceleration: 10
-  deacceleration: 5
+  acceleration: 11
+  deacceleration: 1
   breakForce: 15
   turnrate: 10
   rotationLerpFac: 0
